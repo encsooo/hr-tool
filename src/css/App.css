@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;0,700;1,300;1,500&family=Space+Mono:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+}
+
+main {
+  height: 100%;
+}
+
+h1 {
+  font-family: "Space Mono", monospace;
+  font-size: 6rem;
+  color: rgb(255, 255, 255);
+}
+
+h2 {
+  font-family: "Space Mono", monospace;
+  font-size: 4rem;
+  color: blue;
+}
+
+.hero-container {
+  height: 80%;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  color: rgb(255, 255, 255);
+  align-items: flex-end;
+}
+
+.login-btn {
+  position: fixed;
+  right: 50px;
+  top: 40px;
+  padding: 1rem 2rem;
+  border-radius: 26px;
+  background-color: rgb(255, 255, 255);
+  color: blue;
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.hero-bottom {
+  background-color: rgb(255, 255, 255);
+  height: 20%;
+  align-items: top;
+}
+
+.hero-container,
+.hero-bottom {
+  display: flex;
+  padding: 20px;
+}
+
+/* LOG IN */
+.login-container {
+  position: relative;
+  margin-top: 0;
+  height: 30%;
+}
+
+.login-title {
+  position: absolute;
+  text-align: center;
+  top: 45%;
+  left: 10%;
+  padding: 1rem 3rem;
+  background-color: white;
+}
+
+.login-inner-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 20%;
+  margin: 5% auto;
+  align-items: center;
+  border-left: 1px solid black;
+}
+
+.login-inner-container * {
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.login-inner-container label {
+  font-size: 1.5rem;
+}
+
+.form-login-btn {
+  /* right: 50px; */
+  top: 40px;
+  width: 70%;
+  padding: 1rem 0rem;
+  border-radius: 26px;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid blue;
+  color: blue;
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+input[type="text"],
+input[type="password"] {
+}
