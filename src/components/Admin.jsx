@@ -8,6 +8,19 @@ const Admin = () => {
 
     if(!isAuthenticated) return <Redirect to="/"/>
     
+    const fetchData = async () => {
+    try {
+      const res = await fetch(
+        "https://spreadsheets.google.com/feeds/cells/1lzHqm7_1FDtEQLvTOA8N98OMol001ZC1v4H6ec4QFBI/od6/public/basic?alt=json"
+      );
+      const data = await res.json();
+      console.log(data);
+    } catch {
+      console.log("error");
+    }
+  };
+    fetchData();
+    
     return (
         <>
         {isAuthenticated ? <h2>true</h2> : <h2>false</h2>}
