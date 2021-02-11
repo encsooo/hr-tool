@@ -39,6 +39,7 @@ h2 {
   background-position: center;
   color: rgb(255, 255, 255);
   align-items: flex-end;
+  background-repeat: no-repeat;
 }
 
 .login-btn {
@@ -119,4 +120,22 @@ h2 {
 
 input[type="text"],
 input[type="password"] {
+}
+
+/* NOT FOUND PAGE */
+
+.notfound {
+  height: 100%;
+}
+
+.notfound-container {
+  height: 70%;
+}
+
+.notfound-title {
+  font-size: 4rem;
+}
+
+.notfound-btn {
+  background-color: rgb(255, 255, 255);
 }
