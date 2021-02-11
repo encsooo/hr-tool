@@ -2,36 +2,36 @@ import React from 'react'
 
 const EmployeeRegister = () => {
     return (
-        <div>
-                <h2 className="admin-title">Empolyee Register</h2>
+        <div className="register-container">
+                <h2 className="register-title">Empolyee Register</h2>
       <form action="">
-        <label className="admin-label" for="fname">
+        <label className="register-label" for="fname">
           First name:
         </label>
         <input
-          className="admin-input"
+          className="register-input"
           type="text"
           id="fname"
           name="fname"
           value="John"
         />
 
-        <label className="admin-label" for="lname">
+        <label className="register-label" for="lname">
           Last name:
         </label>
         <input
-          className="admin-input"
+          className="register-input"
           type="text"
           id="lname"
           name="lname"
           value="Doe"
         />
 
-        <label className="admin-label" for="title">
+        <label className="register-label" for="title">
           Job title:
         </label>
         <input
-          className="admin-input"
+          className="register-input"
           type="text"
           id="title"
           name="title"
@@ -39,17 +39,17 @@ const EmployeeRegister = () => {
         />
 
         <input
-          className="admin-checkbox"
+          className="register-checkbox"
           type="checkbox"
           id="admin"
           name="admin"
           value="isadmin"
         />
-        <label className="admin-checkbox-label" for="admin">
+        <label className="register-checkbox-label" for="admin">
           Admin
         </label>
 
-        <button className="admin-btn">Submit</button>
+        <button className="register-btn">Submit</button>
       </form>
         </div>
     )

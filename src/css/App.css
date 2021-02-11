@@ -162,8 +162,12 @@ h2 {
   color: rgb(255, 255, 255);
 }
 
+.admin-hero {
+  width: 40%;
+}
+
 .admin-title {
-  font-size: rem;
+  font-size: 5rem;
 }
 
 .admin-label {

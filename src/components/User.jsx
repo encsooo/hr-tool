@@ -1,6 +1,6 @@
 import React from 'react'
 
-const User = ({ user }) => {
+const User = ({user}) => {
     const {id, firstName, secondName, title, username, admin, urlPhoto} = user
     return (
         <div>
