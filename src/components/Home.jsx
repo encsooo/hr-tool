@@ -16,14 +16,10 @@ const Home = () => {
             Log in <span>>>></span>
           </button>
         </Link>
-        <h1 className="hero-headline">Megacorp</h1>
+        <h1 className="hero-headline">Megacorp Empolyee Page</h1>
       </div>
       <div className="hero-bottom">
-        <h3>
-          Our company: Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Quidem tenetur distinctio tempore labore molestiae facere rerum dolor
-          repudiandae, aliquam corporis.
-        </h3>
+        <h3>Log in for more.</h3>
       </div>
     </>
   );

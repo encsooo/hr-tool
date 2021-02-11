@@ -39,6 +39,7 @@ h2 {
   background-position: center;
   color: rgb(255, 255, 255);
   align-items: flex-end;
+  background-repeat: no-repeat;
 }
 
 .login-btn {
@@ -68,13 +69,16 @@ h2 {
 }
 
 /* LOG IN */
-.login-container {
+.login-container,
+.notfound-header {
   position: relative;
   margin-top: 0;
   height: 30%;
 }
 
-.login-title {
+.login-title,
+.notfound-title {
+  font-size: 2.5rem;
   position: absolute;
   text-align: center;
   top: 45%;
@@ -102,7 +106,8 @@ h2 {
   font-size: 1.5rem;
 }
 
-.form-login-btn {
+.form-login-btn,
+.notfound-btn {
   /* right: 50px; */
   top: 40px;
   width: 70%;
@@ -117,6 +122,66 @@ h2 {
   cursor: pointer;
 }
 
-input[type="text"],
-input[type="password"] {
+.warning {
+  color: red;
+  font-size: 1.5rem;
+}
+
+/* NOT FOUND */
+.notfound-main {
+  margin: 10% auto;
+  display: flex;
+  width: 70%;
+}
+
+.notfound-btn {
+  margin-left: 30px;
+}
+
+/* NOT FOUND PAGE */
+
+.notfound {
+  height: 100%;
+}
+
+.notfound-container {
+  height: 70%;
+}
+
+.notfound-title {
+  font-size: 4rem;
+}
+
+.notfound-btn {
+  background-color: rgb(255, 255, 255);
+}
+
+/* ADMIN */
+
+.form-container {
+  color: rgb(255, 255, 255);
+}
+
+.admin-title {
+  font-size: rem;
+}
+
+.admin-label {
+  width: 30%;
+}
+
+.admin-input {
+  width: 30%;
+}
+
+.admin-checkbox {
+  color: aqua;
+}
+
+.admin-checkbox-label {
+  color: aqua;
+}
+
+.admin-btn {
+  width: 30%;
 }

@@ -43,7 +43,7 @@ const Login = () => {
     dispatch(authenticated())
     return <Redirect to={{ pathname: "/admin", username: formData.username }} />;
   } else if (redirect === "please try again") {
-    return <p>You flipped up</p>;
+    // return <p>You flipped up</p>;
   }
 
   return (
@@ -77,6 +77,7 @@ const Login = () => {
             />
           </div>
           <button className="form-login-btn" onClick={submitHandler}>Login</button>
+          {redirect==="please try again"&& <p className="warning">Wrong Name or Password</p>}
         </form>
       
     </main>
