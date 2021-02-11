@@ -6,7 +6,18 @@ const Admin = () => {
   const isAuthenticated = useSelector((state) => state);
   console.log("admin=>", isAuthenticated);
 
+<<<<<<< HEAD
   if (!isAuthenticated) return <Redirect to="/" />;
+=======
+    if(!isAuthenticated) return <Redirect to="/notFound404"/>
+    
+    return (
+        <>
+        {isAuthenticated ? <h2>true</h2> : <h2>false</h2>}
+        </>
+    )
+}
+>>>>>>> 5bb1831d313586ea5e3301a4613b0a9367007260
 
   const fetchData = async () => {
     try {
