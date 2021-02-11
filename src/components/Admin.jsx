@@ -23,16 +23,4 @@ const Admin = () => {
   };
   fetchData();
 
-  return (
-    <div className="form-container">
-      <div
-        className="admin-hero"
-        style={{
-          background: `linear-gradient(0deg, rgba(9,39,235,0.7) 0%, rgba(9,39,235,0.7) 100%), url(${People})`,
-        }}
-      ></div>
-    </div>
-  );
-};
-
 export default Admin;
