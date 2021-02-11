@@ -2,22 +2,13 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 
+import People from "../assets/people.jpg";
+
 const Admin = () => {
   const isAuthenticated = useSelector((state) => state);
   console.log("admin=>", isAuthenticated);
 
-<<<<<<< HEAD
-  if (!isAuthenticated) return <Redirect to="/" />;
-=======
-    if(!isAuthenticated) return <Redirect to="/notFound404"/>
-    
-    return (
-        <>
-        {isAuthenticated ? <h2>true</h2> : <h2>false</h2>}
-        </>
-    )
-}
->>>>>>> 5bb1831d313586ea5e3301a4613b0a9367007260
+  if (!isAuthenticated) return <Redirect to="/notFound404" />;
 
   const fetchData = async () => {
     try {
@@ -32,7 +23,16 @@ const Admin = () => {
   };
   fetchData();
 
-  return <>{isAuthenticated ? <h2>true</h2> : <h2>false</h2>}</>;
+  return (
+    <div className="form-container">
+      <div
+        className="admin-hero"
+        style={{
+          background: `linear-gradient(0deg, rgba(9,39,235,0.7) 0%, rgba(9,39,235,0.7) 100%), url(${People})`,
+        }}
+      ></div>
+    </div>
+  );
 };
 
 export default Admin;

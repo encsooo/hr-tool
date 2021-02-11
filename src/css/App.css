@@ -155,3 +155,33 @@ h2 {
 .notfound-btn {
   background-color: rgb(255, 255, 255);
 }
+
+/* ADMIN */
+
+.form-container {
+  color: rgb(255, 255, 255);
+}
+
+.admin-title {
+  font-size: rem;
+}
+
+.admin-label {
+  width: 30%;
+}
+
+.admin-input {
+  width: 30%;
+}
+
+.admin-checkbox {
+  color: aqua;
+}
+
+.admin-checkbox-label {
+  color: aqua;
+}
+
+.admin-btn {
+  width: 30%;
+}
