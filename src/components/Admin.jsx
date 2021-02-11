@@ -6,7 +6,7 @@ const Admin = () => {
     const isAuthenticated = useSelector(state => state)
     console.log("admin=>",isAuthenticated)
 
-    if(!isAuthenticated) return <Redirect to="/"/>
+    if(!isAuthenticated) return <Redirect to="/notFound404"/>
     
     return (
         <>
