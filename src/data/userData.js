@@ -1,7 +1,7 @@
 const allData = [
     {
         id: 1,
-        fistName: "John",
+        firstName: "John",
         secondName: "Doe",
         title: "CEO",
         username: "johnny_does",
@@ -12,7 +12,7 @@ const allData = [
 
     {
         id: 2,
-        fistName: "Jane",
+        firstName: "Jane",
         secondName: "Neu",
         title: "Office Manager",
         username: "jane_neu",
@@ -23,7 +23,7 @@ const allData = [
 
     {
         id: 3,
-        fistName: "Sharon",
+        firstName: "Sharon",
         secondName: "Stoned",
         title: "HR",
         username: "sstoned",
@@ -34,7 +34,7 @@ const allData = [
 
     {
         id: 4,
-        fistName: "Rick",
+        firstName: "Rick",
         secondName: "Dahlmüller",
         title: "PR",
         username: "rickyreck",
@@ -45,7 +45,7 @@ const allData = [
 
     {
         id: 5,
-        fistName: "Morty",
+        firstName: "Morty",
         secondName: "Python",
         title: "CTO",
         username: "momo89",
@@ -56,7 +56,7 @@ const allData = [
 
     {
         id: 6,
-        fistName: "Xavier",
+        firstName: "Xavier",
         secondName: "Some",
         title: "Assistant Manager",
         username: "some_xavier",
@@ -67,7 +67,7 @@ const allData = [
 
     {
         id: 7,
-        fistName: "Eniko",
+        firstName: "Eniko",
         secondName: "McEnister",
         title: "Senior Developer",
         username: "crazycatlady666",
@@ -78,18 +78,18 @@ const allData = [
 
     {
         id: 8,
-        fistName: "Ines",
+        firstName: "Ines",
         secondName: "Schwarz",
         title: "Senior Developer",
         username: "luna",
         password: 1234,
         admin: true,
-        urlPhoto: "https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_960_720.jpg"
+        urlPhoto: "https://cdn.pixabay.com/photo/2017/11/09/21/41/cat-2934720_960_720.jpg"
     },
 
     {
         id: 9,
-        fistName: "Lorem",
+        firstName: "Lorem",
         secondName: "Dixit",
         title: "Senior Developer",
         username: "loremdixit",

@@ -15,8 +15,10 @@ const Login = () => {
 
   const inputRef = useRef();
 
-  const NAME = process.env.REACT_APP_NAME;
-  const PASSWORD = process.env.REACT_APP_PASSWORD;
+  // const NAME = process.env.REACT_APP_NAME;
+  // const PASSWORD = process.env.REACT_APP_PASSWORD;
+  const NAME = "Bella"
+  const PASSWORD = "1234"
 
   useEffect(() => {
     inputRef.current.focus();
