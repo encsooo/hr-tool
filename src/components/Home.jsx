@@ -12,7 +12,7 @@ const Home = () => {
         }}
       >
         <Link to="/login">
-          <button className="login-btn">
+          <button className="top-right-btn">
             Log in <span>>>></span>
           </button>
         </Link>

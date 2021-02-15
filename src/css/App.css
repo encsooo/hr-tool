@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;0,700;1,300;1,500&family=Space+Mono:wght@400;700&display=swap");
 
+/* BASE */
 * {
   margin: 0;
   padding: 0;
@@ -21,28 +22,7 @@ main {
   width: 100%;
 }
 
-h1 {
-  font-family: "Space Mono", monospace;
-  font-size: 6rem;
-  color: rgb(255, 255, 255);
-}
-
-h2 {
-  font-family: "Space Mono", monospace;
-  font-size: 4rem;
-  color: blue;
-}
-
-.hero-container {
-  height: 80%;
-  width: 100vw;
-  background-size: cover;
-  background-position: center;
-  color: rgb(255, 255, 255);
-  align-items: flex-end;
-  background-repeat: no-repeat;
-}
-
+/* BUTTONS */
 button {
   padding: 1rem 2rem;
   border-radius: 26px;
@@ -60,10 +40,41 @@ button {
   top: 40px;
 }
 
-.hero-bottom {
-  background-color: rgb(255, 255, 255);
-  height: 20%;
-  align-items: top;
+/* HEADER */
+.header-container {
+  width: 100%;
+  position: relative;
+  margin-top: 0;
+  height: 30%;
+}
+
+.header-title {
+  font-size: 2.5rem;
+  position: absolute;
+  text-align: center;
+  top: 45%;
+  left: 10%;
+  padding: 1rem 3rem;
+  background-color: white;
+  font-family: "Space Mono", monospace;
+  color: blue;
+}
+
+/* HOME */
+h1 {
+  font-family: "Space Mono", monospace;
+  font-size: 6rem;
+  color: rgb(255, 255, 255);
+}
+
+.hero-container {
+  height: 80%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  color: rgb(255, 255, 255);
+  align-items: flex-end;
+  background-repeat: no-repeat;
 }
 
 .hero-container,
@@ -72,25 +83,7 @@ button {
   padding: 20px;
 }
 
-/* LOG IN */
-.login-container,
-.notfound-header {
-  position: relative;
-  margin-top: 0;
-  height: 30%;
-}
-
-.login-title,
-.notfound-title {
-  font-size: 2.5rem;
-  position: absolute;
-  text-align: center;
-  top: 45%;
-  left: 10%;
-  padding: 1rem 3rem;
-  background-color: white;
-}
-
+/* LOGIN */
 .login-inner-container {
   display: flex;
   flex-direction: column;
@@ -126,8 +119,6 @@ button {
   margin-left: 30px;
 }
 
-/* NOT FOUND PAGE */
-
 .notfound {
   height: 100%;
 }
@@ -140,52 +131,7 @@ button {
   font-size: 4rem;
 }
 
-.notfound-btn {
-  background-color: rgb(255, 255, 255);
-}
-
-/* ADMIN */
-
-.form-container {
-  color: rgb(255, 255, 255);
-}
-
-.admin-hero {
-  width: 40%;
-}
-
-.admin-title {
-  font-size: 5rem;
-}
-
-.admin-label {
-  width: 30%;
-}
-
-.admin-input {
-  width: 30%;
-}
-
-.admin-checkbox {
-  color: aqua;
-}
-
-.admin-checkbox-label {
-  color: aqua;
-}
-
-.admin-btn {
-  width: 30%;
-}
-
 /* ALL USERS */
-.all-users header {
-  width: 100%;
-  height: 20rem;
-  background-size: cover;
-  position: relative;
-}
-
 .user-container {
   margin: 5% auto;
   width: 80%;
@@ -205,24 +151,11 @@ button {
   color: blue;
 }
 
-.user-list-title {
-  position: absolute;
-  top: 40%;
-  font-size: 2.5rem;
-  background-color: white;
-  color: blue;
-  padding: 2rem;
-  display: inline;
-  margin-left: 10%;
-  text-transform: capitalize;
-}
-
 img {
   width: 50%;
 }
 
 /* TOGGLE MENU */
-
 .toggle-inactive {
   opacity: 0;
   visibility: hidden;
@@ -240,4 +173,17 @@ img {
   border: none;
   font-size: 1rem;
   outline: none;
+}
+
+/* EMPLOYEE */
+.employee-main {
+  margin: 5% auto;
+  width: 80%;
+  border-left: 2px solid blue;
+  padding: 2rem;
+}
+
+.employee-main p {
+  margin-bottom: 1rem;
+  font-size: 2rem;
 }

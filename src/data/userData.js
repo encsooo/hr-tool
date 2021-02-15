@@ -1,6 +1,6 @@
 const allData = [
     {
-        id: 1,
+        id: 0,
         firstName: "John",
         secondName: "Doe",
         title: "CEO",
@@ -15,7 +15,7 @@ const allData = [
     },
 
     {
-        id: 2,
+        id: 1,
         firstName: "Jane",
         secondName: "Neu",
         title: "Office Manager",
@@ -30,7 +30,7 @@ const allData = [
     },
 
     {
-        id: 3,
+        id: 2,
         firstName: "Sharon",
         secondName: "Stoned",
         title: "HR",
@@ -45,7 +45,7 @@ const allData = [
     },
 
     {
-        id: 4,
+        id: 3,
         firstName: "Rick",
         secondName: "Dahlmüller",
         title: "PR",
@@ -60,7 +60,7 @@ const allData = [
     },
 
     {
-        id: 5,
+        id: 4,
         firstName: "Morty",
         secondName: "Python",
         title: "CTO",
@@ -75,7 +75,7 @@ const allData = [
     },
 
     {
-        id: 6,
+        id: 5,
         firstName: "Xavier",
         secondName: "Some",
         title: "Assistant Manager",
@@ -90,7 +90,7 @@ const allData = [
     },
 
     {
-        id: 7,
+        id: 6,
         firstName: "Eniko",
         secondName: "McEnister",
         title: "Senior Developer",
@@ -105,7 +105,7 @@ const allData = [
     },
 
     {
-        id: 8,
+        id: 7,
         firstName: "Ines",
         secondName: "Schwarz",
         title: "Senior Developer",
@@ -120,7 +120,7 @@ const allData = [
     },
 
     {
-        id: 9,
+        id: 8,
         firstName: "Lorem",
         secondName: "Dixit",
         title: "Senior Developer",
