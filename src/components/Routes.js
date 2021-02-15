@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import {useSelector} from "react-redux"
-import Home from "../components/Home";
-import Login from "../components/Login";
-import Admin from "../components/Admin";
+import Home from "./Home";
+import Login from "./Login";
+import Admin from "./Admin";
 import EmployeeRegister from "./EmployeeRegister"
-import NotFound404 from "../components/NotFound404";
+import NotFound404 from "./NotFound404";
 
 const Routes = () => {
   const isAuthenticated = useSelector(state => state)
