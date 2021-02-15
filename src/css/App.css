@@ -174,3 +174,16 @@ img {
   font-size: 1rem;
   outline: none;
 }
+
+/* EMPLOYEE */
+.employee-main {
+  margin: 5% auto;
+  width: 80%;
+  border-left: 2px solid blue;
+  padding: 2rem;
+}
+
+.employee-main p {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
