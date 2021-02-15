@@ -1,6 +1,12 @@
-import React from 'react'
+import React from 'react';  
+import { useSelector } from "react-redux";
+import { Redirect } from "react-router-dom";
 
 const EmployeeRegister = () => {
+  
+    const isAuthenticated = useSelector((state) => state);
+    if (!isAuthenticated) return <Redirect to="/notFound404" />;
+
     return (
         <div className="register-container">
                 <h2 className="register-title">Empolyee Register</h2>

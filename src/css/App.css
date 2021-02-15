@@ -18,6 +18,7 @@
 
 main {
   height: 100%;
+  width: 100%;
 }
 
 h1 {
@@ -42,10 +43,7 @@ h2 {
   background-repeat: no-repeat;
 }
 
-.login-btn {
-  position: fixed;
-  right: 50px;
-  top: 40px;
+button {
   padding: 1rem 2rem;
   border-radius: 26px;
   background-color: rgb(255, 255, 255);
@@ -54,6 +52,12 @@ h2 {
   text-align: center;
   text-transform: uppercase;
   cursor: pointer;
+}
+
+.top-right-btn {
+  position: fixed;
+  right: 50px;
+  top: 40px;
 }
 
 .hero-bottom {
@@ -106,22 +110,6 @@ h2 {
   font-size: 1.5rem;
 }
 
-.form-login-btn,
-.notfound-btn {
-  /* right: 50px; */
-  top: 40px;
-  width: 70%;
-  padding: 1rem 0rem;
-  border-radius: 26px;
-  background-color: rgb(255, 255, 255);
-  border: 2px solid blue;
-  color: blue;
-  font-weight: 900;
-  text-align: center;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-
 .warning {
   color: red;
   font-size: 1.5rem;
@@ -156,36 +144,100 @@ h2 {
   background-color: rgb(255, 255, 255);
 }
 
+/* ADMIN */
+
+.form-container {
+  color: rgb(255, 255, 255);
+}
+
 .admin-hero {
   width: 40%;
 }
 
-/* REGISTER */
-
-.register-container {
-  color: rgb(255, 255, 255);
-}
-
-.register-title {
+.admin-title {
   font-size: 5rem;
 }
 
-.register-label {
+.admin-label {
   width: 30%;
 }
 
-.register-input {
+.admin-input {
   width: 30%;
 }
 
-.register-checkbox {
+.admin-checkbox {
   color: aqua;
 }
 
-.register-checkbox-label {
+.admin-checkbox-label {
   color: aqua;
 }
 
-.register-btn {
+.admin-btn {
   width: 30%;
+}
+
+/* ALL USERS */
+.all-users header {
+  width: 100%;
+  height: 20rem;
+  background-size: cover;
+  position: relative;
+}
+
+.user-container {
+  margin: 5% auto;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.individual-user {
+  border-left: 2px solid blue;
+  padding-left: 2rem;
+  height: 280px;
+}
+
+.individual-user h3 {
+  margin: 0.5rem 0;
+  color: blue;
+}
+
+.user-list-title {
+  position: absolute;
+  top: 40%;
+  font-size: 2.5rem;
+  background-color: white;
+  color: blue;
+  padding: 2rem;
+  display: inline;
+  margin-left: 10%;
+  text-transform: capitalize;
+}
+
+img {
+  width: 50%;
+}
+
+/* TOGGLE MENU */
+
+.toggle-inactive {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+}
+
+.toggle-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdown-info-btn,
+.dropdown-info-btn:focus {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  outline: none;
 }
