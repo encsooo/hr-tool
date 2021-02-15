@@ -156,36 +156,36 @@ h2 {
   background-color: rgb(255, 255, 255);
 }
 
-/* ADMIN */
-
-.form-container {
-  color: rgb(255, 255, 255);
-}
-
 .admin-hero {
   width: 40%;
 }
 
-.admin-title {
+/* REGISTER */
+
+.register-container {
+  color: rgb(255, 255, 255);
+}
+
+.register-title {
   font-size: 5rem;
 }
 
-.admin-label {
+.register-label {
   width: 30%;
 }
 
-.admin-input {
+.register-input {
   width: 30%;
 }
 
-.admin-checkbox {
+.register-checkbox {
   color: aqua;
 }
 
-.admin-checkbox-label {
+.register-checkbox-label {
   color: aqua;
 }
 
-.admin-btn {
+.register-btn {
   width: 30%;
 }
