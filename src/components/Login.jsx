@@ -56,9 +56,8 @@ const Login = () => {
 
   return (
     <main>
-      
-      <div className="login-container" style={{background: `linear-gradient(0deg, rgba(9,39,235,0.7) 0%, rgba(9,39,235,0.7) 100%), url(${Laptop})`}}>
-          <div className="login-title">
+      <div className="header-container" style={{background: `linear-gradient(0deg, rgba(9,39,235,0.7) 0%, rgba(9,39,235,0.7) 100%), url(${Laptop})`}}>
+          <div className="header-title">
           <h2>Please log in</h2>
           </div>
       </div>
@@ -84,7 +83,7 @@ const Login = () => {
               onChange={changeHandler}
             />
           </div>
-          <button className="form-login-btn" onClick={submitHandler}>Login</button>
+          <button className="top-right-btn" onClick={submitHandler}>Login</button>
           {redirect==="wrong"&& <p className="warning">Wrong Name or Password</p>}
         </form>
       
