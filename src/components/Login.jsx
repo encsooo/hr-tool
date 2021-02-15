@@ -13,6 +13,8 @@ const Login = () => {
 
   const [formData, setFormData] = useState({ username: "", password: "" });
   const [redirect, setRedirect] = useState("");
+  // SEND THE ID THROUGH PROPS SO WE KNOW WHICH USER IS IT
+  const [userID, setUserID] = useState(0) 
 
   const inputRef = useRef();
 
@@ -29,29 +31,30 @@ const Login = () => {
     setRedirect(checkLoginInfo());
   };
 
+  
   const checkLoginInfo = () => {
     const permissionCheck = allData.reduce((acc,user)=>{
       if(formData.username===user.username && formData.password===user.password && user.admin){
         acc = "admin"
       } else if(formData.username===user.username && formData.password===user.password && !user.admin){
         acc = "employee"
+        setUserID(user.id)
       }
       return acc
     },"")
    
-   if(permissionCheck===""){
-     return "wrong"
-   }else{
-     return permissionCheck
-   }
+    if(permissionCheck===""){
+      return "wrong"
+    }else{
+      return permissionCheck
+    }
   };
- 
 
   if (redirect === "admin") {
     dispatch(authenticated())
     return <Redirect to={{ pathname: "/admin", username: formData.username }} />;
   } else if (redirect === "employee") {
-    return <Redirect to={{ pathname: "/employee", username: formData.username }} />;
+    return <Redirect to={{ pathname: "/employee", id: userID}} />;
   }
 
   return (
