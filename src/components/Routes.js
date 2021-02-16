@@ -18,7 +18,6 @@ const Routes = () => {
           {!isAuthenticated && <Route path="/login" component={Login} />}
           <Route path="/admin" component={Admin} />
           <Route path="/checkin" component={Checkin} />
-          
           <Route path="/employeeRegister" component={EmployeeRegister} />
           <Route component={NotFound404} />
         </Switch>

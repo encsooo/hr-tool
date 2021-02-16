@@ -1,6 +1,7 @@
 import React, {useState} from 'react';  
 import { useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
+
 import allData from "../data/userData"
 import userData from "../data/userData"
 import {nanoid} from "nanoid"
@@ -38,8 +39,6 @@ const EmployeeRegister = () => {
         admin: false
     })
   }
- 
-  console.log("re-render")
 
     return (
       <div className="register-container">
