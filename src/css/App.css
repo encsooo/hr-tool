@@ -187,3 +187,36 @@ img {
   margin-bottom: 1rem;
   font-size: 2rem;
 }
+
+/* EMPLOYEE REGISTER */
+.register-container {
+  margin: 5% auto;
+  width: 80%;
+}
+
+.register-form {
+  width: 100%;
+  margin: 2rem 0rem;
+}
+
+.register-form input[type="text"] {
+  width: 20%;
+  padding: 0.5rem;
+  margin: 1rem 2rem;
+  /* display: inline-block; */
+  border: none;
+  border-bottom: 1px solid blue;
+  /* box-sizing: border-box; */
+}
+
+table {
+  width: 100%;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(38, 0, 255, 0.171);
+}
+
+td {
+  padding: 1rem;
+}

@@ -2,20 +2,25 @@ import React, {useState} from 'react';
 import { useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import allData from "../data/userData"
-import userData from "../data/userData"
-import {nanoid} from "nanoid"
+import { nanoid } from "nanoid"
+import people from "../assets/people.jpg"
 
 const EmployeeRegister = () => { 
     // const isAuthenticated = useSelector((state) => state);
     // if (!isAuthenticated) return <Redirect to="/notFound404" />;
 
+  
+  
+  const allDataJson = JSON.stringify(allData)
+
+
     const [formData, setFormData] = useState({
-        id: "",
         firstName: "",
         secondName: "",
         title: "",
         username: "",
         password: "",
+        id: "",
         admin: false
     })
     console.log(allData);
@@ -27,24 +32,36 @@ const EmployeeRegister = () => {
   
   const submitHandler = (e) => {
     e.preventDefault()
-    allData.push({...formData, id: nanoid()})
+    
+    const storageData = JSON.parse(localStorage.getItem('myData'))
+
+    const updatedStorageData = [...storageData, formData]
+
+    console.log(formData);
+    console.log(updatedStorageData);
+    localStorage.setItem('myData', JSON.stringify(updatedStorageData))
+    
     setFormData({
-        id: "",
-        firstName: "",
-        secondName: "",
-        title: "",
-        username: "",
-        password: "",
-        admin: false
+      firstName: "",
+      secondName: "",
+      title: "",
+      username: "",
+      password: "",
+      id: "",
+      admin: false
     })
+    
   }
  
-  console.log("re-render")
 
-    return (
+  return (
+    <>
+      <div className="header-container" style={{background: `linear-gradient(0deg, rgba(9,39,235,0.7) 0%, rgba(9,39,235,0.7) 100%), url(${people})`}} >
+        <div className="header-title"><h2>Employee Register</h2></div>
+      </div>
       <div className="register-container">
-        <h2 className="register-title">Employee Register</h2>
-      <form>
+
+      <form className="register-form" onSubmit={submitHandler}>
         <label className="register-label" htmlFor="firstName">
           First name:
         </label>
@@ -89,20 +106,22 @@ const EmployeeRegister = () => {
           Admin
         </label>
 
-        <button onClick={submitHandler} className="register-btn">Submit</button>
-        </form>
-        <div>
-          {allData.map((employee) =>
-            <div key={employee.id} className="submited-data">
-              <h3>{employee.id}</h3>
-              <h3>{employee.firstName}</h3>
-              <h3>{employee.secondName}</h3>
-              <h3>{employee.title}</h3>
-              <h3>{employee.admin}</h3>
-            </div>)
-          }
-        </div> 
+        <input type="submit" className="register-btn"/>
+        
+      </form>
+      <table className="employees-container">
+        {allData.map((employee) =>
+          <tr key={employee.id} className="registered-employee">
+            <td>{employee.firstName}</td>
+            <td>{employee.secondName}</td>
+            <td>{employee.title}</td>
+            <td>{employee.id}</td>
+            <td>{employee.admin}</td>
+          </tr>)
+        }
+      </table> 
       </div>
+    </>
     )
 }
 
