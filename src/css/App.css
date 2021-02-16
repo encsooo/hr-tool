@@ -1,218 +1,189 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;0,700;1,300;1,500&family=Space+Mono:wght@400;700&display=swap");
 
+/* BASE */
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
-	font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 #root {
-	width: 100vw;
-	height: 100vh;
-	font-family: "Roboto", sans-serif;
+  width: 100vw;
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
 }
 
 main {
-	height: 100%;
-	width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
+/* BUTTONS */
+button {
+  padding: 1rem 2rem;
+  border-radius: 26px;
+  background-color: rgb(255, 255, 255);
+  color: blue;
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.top-right-btn {
+  position: fixed;
+  right: 50px;
+  top: 40px;
+}
+
+/* HEADER */
+.header-container {
+  width: 100%;
+  position: relative;
+  margin-top: 0;
+  height: 30%;
+}
+
+.header-title {
+  font-size: 2.5rem;
+  position: absolute;
+  text-align: center;
+  top: 45%;
+  left: 10%;
+  padding: 1rem 3rem;
+  background-color: white;
+  font-family: "Space Mono", monospace;
+  color: blue;
+}
+
+/* HOME */
 h1 {
-	font-family: "Space Mono", monospace;
-	font-size: 6rem;
-	color: rgb(255, 255, 255);
-}
-
-h2 {
-	font-family: "Space Mono", monospace;
-	font-size: 4rem;
-	color: blue;
+  font-family: "Space Mono", monospace;
+  font-size: 6rem;
+  color: rgb(255, 255, 255);
 }
 
 .hero-container {
-	height: 80%;
-	width: 100vw;
-	background-size: cover;
-	background-position: center;
-	color: rgb(255, 255, 255);
-	align-items: flex-end;
-	background-repeat: no-repeat;
-}
-
-button {
-	position: fixed;
-	right: 50px;
-	top: 40px;
-	padding: 1rem 2rem;
-	border-radius: 26px;
-	background-color: rgb(255, 255, 255);
-	color: blue;
-	font-weight: 900;
-	text-align: center;
-	text-transform: uppercase;
-	cursor: pointer;
-}
-
-.hero-bottom {
-	background-color: rgb(255, 255, 255);
-	height: 20%;
-	align-items: top;
+  height: 80%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  color: rgb(255, 255, 255);
+  align-items: flex-end;
+  background-repeat: no-repeat;
 }
 
 .hero-container,
 .hero-bottom {
-	display: flex;
-	padding: 20px;
+  display: flex;
+  padding: 20px;
 }
 
-/* LOG IN */
-.login-container,
-.notfound-header {
-	position: relative;
-	margin-top: 0;
-	height: 30%;
-}
-
-.login-title,
-.notfound-title {
-	font-size: 2.5rem;
-	position: absolute;
-	text-align: center;
-	top: 45%;
-	left: 10%;
-	padding: 1rem 3rem;
-	background-color: white;
-}
-
+/* LOGIN */
 .login-inner-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	width: 20%;
-	margin: 5% auto;
-	align-items: center;
-	border-left: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 20%;
+  margin: 5% auto;
+  align-items: center;
+  border-left: 1px solid black;
 }
 
 .login-inner-container * {
-	padding: 1rem;
-	margin: 1rem;
+  padding: 1rem;
+  margin: 1rem;
 }
 
 .login-inner-container label {
-	font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .warning {
-	color: red;
-	font-size: 1.5rem;
+  color: red;
+  font-size: 1.5rem;
 }
 
 /* NOT FOUND */
 .notfound-main {
-	margin: 10% auto;
-	display: flex;
-	width: 70%;
+  margin: 10% auto;
+  display: flex;
+  width: 70%;
 }
 
 .notfound-btn {
-	margin-left: 30px;
+  margin-left: 30px;
 }
 
-/* NOT FOUND PAGE */
-
 .notfound {
-	height: 100%;
+  height: 100%;
 }
 
 .notfound-container {
-	height: 70%;
+  height: 70%;
 }
 
 .notfound-title {
-	font-size: 4rem;
-}
-
-.notfound-btn {
-	background-color: rgb(255, 255, 255);
-}
-
-/* ADMIN */
-
-.form-container {
-	color: rgb(255, 255, 255);
-}
-
-.admin-hero {
-	width: 40%;
-}
-
-.admin-title {
-	font-size: 5rem;
-}
-
-.admin-label {
-	width: 30%;
-}
-
-.admin-input {
-	width: 30%;
-}
-
-.admin-checkbox {
-	color: aqua;
-}
-
-.admin-checkbox-label {
-	color: aqua;
-}
-
-.admin-btn {
-	width: 30%;
+  font-size: 4rem;
 }
 
 /* ALL USERS */
-.all-users header {
-	width: 100%;
-	height: 20rem;
-	background-size: cover;
-	position: relative;
-}
-
 .user-container {
-	margin: 5% auto;
-	width: 80%;
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 3rem;
+  margin: 5% auto;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
 }
 
 .individual-user {
-	border-left: 2px solid blue;
-	padding-left: 2rem;
+  border-left: 2px solid blue;
+  padding-left: 2rem;
+  height: 280px;
 }
 
 .individual-user h3 {
-	margin: 0.5rem 0;
-	color: blue;
-}
-
-.user-list-title {
-	position: absolute;
-	top: 40%;
-	font-size: 2.5rem;
-	background-color: white;
-	color: blue;
-	padding: 2rem;
-	display: inline;
-	margin-left: 10%;
-	text-transform: capitalize;
+  margin: 0.5rem 0;
+  color: blue;
 }
 
 img {
-	width: 50%;
+  width: 50%;
+}
+
+/* TOGGLE MENU */
+.toggle-inactive {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+}
+
+.toggle-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdown-info-btn,
+.dropdown-info-btn:focus {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+}
+
+/* EMPLOYEE */
+.employee-main {
+  margin: 5% auto;
+  width: 80%;
+  border-left: 2px solid blue;
+  padding: 2rem;
+}
+
+.employee-main p {
+  margin-bottom: 1rem;
+  font-size: 2rem;
 }
