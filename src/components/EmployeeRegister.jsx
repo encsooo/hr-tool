@@ -1,6 +1,7 @@
 import React, {useState} from 'react';  
 import { useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
+
 import allData from "../data/userData"
 import { nanoid } from "nanoid"
 import people from "../assets/people.jpg"
@@ -52,7 +53,7 @@ const EmployeeRegister = () => {
     })
     
   }
- 
+
 
   return (
     <>
