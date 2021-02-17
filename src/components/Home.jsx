@@ -16,7 +16,7 @@ const Home = () => {
             Log in <span>>>></span>
           </button>
         </Link>
-        <h1 className="hero-headline">Megacorp Empolyee Page</h1>
+        <h1 className="hero-headline">Megacorp Employee Page</h1>
       </div>
       <div className="hero-bottom">
         <h3>Log in for more.</h3>

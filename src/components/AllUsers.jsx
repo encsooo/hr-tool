@@ -1,6 +1,6 @@
 import React from 'react'
 import userData from '../data/userData'
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 import people from "../assets/people.jpg"
 
 import User from './User'

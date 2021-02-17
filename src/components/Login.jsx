@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import {useSelector, useDispatch} from "react-redux"
 
-import { authenticated }  from "../actions/authenticationAction"
+import { authenticated }  from "../store/actions/authenticationAction"
 import Laptop from '../assets/laptop.jpg';
 import allData from "../data/userData";
 
@@ -14,7 +14,7 @@ const Login = () => {
   const [formData, setFormData] = useState({ username: "", password: "" });
   const [redirect, setRedirect] = useState("");
   // SEND THE ID THROUGH PROPS SO WE KNOW WHICH USER IS IT
-  const [userID, setUserID] = useState(0) 
+  const [userID, setUserID] = useState(0)  
 
   const inputRef = useRef();
 

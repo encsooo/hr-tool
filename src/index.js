@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 import Routes from './components/Routes';
 import {createStore} from "redux";
 import {Provider} from "react-redux"
-import {authenticationReducer} from "./reducers/authenticationReducer"
 import './css/App.css'
+import { allReducers } from './store/reducers/allReducers';
 
 
 const store = createStore(
-  authenticationReducer,
+  allReducers,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 
