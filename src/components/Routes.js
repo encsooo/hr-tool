@@ -11,7 +11,7 @@ import NotFound404 from "../components/NotFound404";
 
 
 const Routes = () => {
-  const isAuthenticated = useSelector((state) => state);
+  const isAuthenticated = useSelector((state) => state.authReducer);
   return (
     <main>
       <Router>
