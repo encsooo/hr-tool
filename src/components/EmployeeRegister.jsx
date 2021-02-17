@@ -6,6 +6,10 @@ import { nanoid } from "nanoid"
 import people from "../assets/people.jpg"
 import { addEmployeeAction, getEmployeesAction } from "../store/actions/employeesActions"
 
+import allData from "../data/userData"
+import userData from "../data/userData"
+import {nanoid} from "nanoid"
+
 const EmployeeRegister = () => { 
     // const isAuthenticated = useSelector((state) => state);
     // if (!isAuthenticated) return <Redirect to="/notFound404" />;

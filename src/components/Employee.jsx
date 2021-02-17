@@ -4,7 +4,7 @@ import allData from "../data/userData"
 
 export default function Employee (props){
     let userID = props.location.id;
-    let userData = allData[userID]
+    let userData = allData.find(user => user.id === userID);
     console.log(userData);
     return(
         <>
