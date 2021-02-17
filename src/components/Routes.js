@@ -9,7 +9,7 @@ import NotFound404 from "../components/NotFound404";
 import EmployeeRegister from "../components/EmployeeRegister"
 
 const Routes = () => {
-  const isAuthenticated = useSelector((state) => state);
+  const isAuthenticated = useSelector((state) => state.authReducer);
   return (
     <main>
       <Router>

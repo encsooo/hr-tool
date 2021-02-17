@@ -1,18 +1,26 @@
-import React, {useState} from 'react';  
-import { useSelector } from "react-redux";
+import React, {useState, useEffect} from 'react';  
+import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
-import allData from "../data/userData"
+// import allData from "../data/userData"
 import { nanoid } from "nanoid"
 import people from "../assets/people.jpg"
+import { addEmployeeAction, getEmployeesAction } from "../store/actions/employeesActions"
 
 const EmployeeRegister = () => { 
     // const isAuthenticated = useSelector((state) => state);
     // if (!isAuthenticated) return <Redirect to="/notFound404" />;
-
   
+  useEffect(() => {
+    dispatch(getEmployeesAction()) 
+    console.log("useEffect");
+  }, [])
   
-  const allDataJson = JSON.stringify(allData)
+  const dispatch = useDispatch()
+  
+  const employeesData = useSelector((state) => state.employeesReducer.employees)
 
+  // const allDataJson = JSON.stringify(allData)
+  // localStorage.setItem('myData', allDataJson)
 
     const [formData, setFormData] = useState({
         firstName: "",
@@ -23,7 +31,7 @@ const EmployeeRegister = () => {
         id: "",
         admin: false
     })
-    console.log(allData);
+    console.log(employeesData);
   
   const changeHandler = (e) => {
     const value = e.target.type === "checkbox" ? e.target.checked : e.target.value;
@@ -33,13 +41,7 @@ const EmployeeRegister = () => {
   const submitHandler = (e) => {
     e.preventDefault()
     
-    const storageData = JSON.parse(localStorage.getItem('myData'))
-
-    const updatedStorageData = [...storageData, formData]
-
-    console.log(formData);
-    console.log(updatedStorageData);
-    localStorage.setItem('myData', JSON.stringify(updatedStorageData))
+    dispatch(addEmployeeAction(formData)) 
     
     setFormData({
       firstName: "",
@@ -50,9 +52,7 @@ const EmployeeRegister = () => {
       id: "",
       admin: false
     })
-    
   }
- 
 
   return (
     <>
@@ -110,7 +110,7 @@ const EmployeeRegister = () => {
         
       </form>
       <table className="employees-container">
-        {allData.map((employee) =>
+        {employeesData.map((employee) =>
           <tr key={employee.id} className="registered-employee">
             <td>{employee.firstName}</td>
             <td>{employee.secondName}</td>
