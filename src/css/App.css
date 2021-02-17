@@ -44,7 +44,6 @@ h2 {
 }
 
 button {
-	position: fixed;
 	right: 50px;
 	top: 40px;
 	padding: 1rem 2rem;
@@ -55,6 +54,11 @@ button {
 	text-align: center;
 	text-transform: uppercase;
 	cursor: pointer;
+}
+
+.login-btn,
+.employee-register-btn {
+	position: fixed;
 }
 
 .hero-bottom {

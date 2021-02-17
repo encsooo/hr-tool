@@ -17,7 +17,7 @@ const AllUsers = (allData) => {
         <div className="all-users" >
             <header style={{background: `linear-gradient(0deg, rgba(9,39,235,0.7) 0%, rgba(9,39,235,0.7) 100%), url(${people})`}}>
                 <h1 className="user-list-title">Employee List</h1>
-                <Link to="/employeeRegister"><button>Employee Register</button></Link>
+                <Link to="/employeeRegister"><button className="employee-register-btn">Employee Register</button></Link>
             </header>
             <div className="user-container">
                 {userList}
