@@ -5,8 +5,15 @@ export const addEmployeeAction = (formData) => {
    }
 }
 
+export const deleteEmployeeAction = (employeeid) => {
+    return {
+        type: 'DELETE_EMPLOYEE',
+        payload: employeeid
+    }
+}
+
 export const getEmployeesAction = () => {
-    console.log("action");
+    //console.log("action");
     return {
         type: 'GET_EMPLOYEES'
     }

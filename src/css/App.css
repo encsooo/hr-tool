@@ -23,7 +23,8 @@ main {
 }
 
 /* BUTTONS */
-button {
+button,
+.register-btn {
   padding: 1rem 2rem;
   border-radius: 26px;
   background-color: rgb(255, 255, 255);
@@ -133,7 +134,7 @@ h1 {
 
 /* ALL USERS */
 .user-container {
-  margin: 18% auto;
+  margin: 18% auto 50px;
   width: 80%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -177,7 +178,7 @@ img {
 
 /* EMPLOYEE */
 .employee-main {
-  margin: 5% auto;
+  margin: 25% auto 50px;
   width: 80%;
   border-left: 2px solid blue;
   padding: 2rem;
@@ -190,7 +191,7 @@ img {
 
 /* EMPLOYEE REGISTER */
 .register-container {
-  margin: 5% auto;
+  margin: 25% auto 50px;
   width: 80%;
 }
 
@@ -219,4 +220,8 @@ tr:nth-child(even) {
 
 td {
   padding: 1rem;
+}
+
+.employee-edit-btn {
+  padding: 5px 10px;
 }
