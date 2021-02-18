@@ -72,7 +72,7 @@ const EmployeeRegister = (props) => {
   return (
     <>
       <div className="header-container" style={{background: `linear-gradient(0deg, rgba(9,39,235,0.7) 0%, rgba(9,39,235,0.7) 100%), url(${people})`}} >
-        <button className="notfound-btn" onClick={() => props.history.push("/")}>
+        <button className="top-right-btn" onClick={() => props.history.push("/")}>
           >>> Log out
         </button>
         <div className="header-title"><h2>Employee Register</h2></div>

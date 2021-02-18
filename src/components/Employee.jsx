@@ -12,7 +12,8 @@ export default function Employee (props){
             <button className="notfound-btn" onClick={() => props.history.push("/")}>
                 >>> Log out
             </button>
-            <h2 className="header-title">{userData.username}</h2>
+            <div className="header-title">
+            <h2>{userData.username}</h2></div>
         </div>
         <div className="employee-main">
             <p>{userData.firstName} {userData.secondName} | {userData.title}</p>

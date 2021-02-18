@@ -64,7 +64,7 @@ const Login = (props) => {
               className="notfound-btn"
               onClick={() => props.history.push("/")}
             >
-              >>> Go Home
+              To Main Page
             </button>
           <div className="header-title">
             <h2>Please log in</h2>
@@ -92,7 +92,7 @@ const Login = (props) => {
               onChange={changeHandler}
             />
           </div>
-          <button className="top-right-btn" onClick={submitHandler}>Login</button>
+          <button className="login-btn" onClick={submitHandler}>Login</button>
           {redirect==="wrong"&& <p className="warning">Wrong Name or Password</p>}
         </form>
       
