@@ -9,6 +9,9 @@ export default function Employee (props){
     return(
         <>
         <div className="header-container" style={{background: `linear-gradient(0deg, rgba(9,39,235,0.7) 0%, rgba(9,39,235,0.7) 100%), url(${Train})`}}>
+            <button className="notfound-btn" onClick={() => props.history.push("/")}>
+                >>> Log out
+            </button>
             <h2 className="header-title">{userData.username}</h2>
         </div>
         <div className="employee-main">

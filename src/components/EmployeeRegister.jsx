@@ -9,7 +9,7 @@ import { addEmployeeAction, getEmployeesAction, deleteEmployeeAction } from "../
 import allData from "../data/userData"
 import userData from "../data/userData"
 
-const EmployeeRegister = () => { 
+const EmployeeRegister = (props) => { 
      //const isAuthenticated = useSelector((state) => state);
      //if (!isAuthenticated) return <Redirect to="/notFound404" />;
   
@@ -72,6 +72,9 @@ const EmployeeRegister = () => {
   return (
     <>
       <div className="header-container" style={{background: `linear-gradient(0deg, rgba(9,39,235,0.7) 0%, rgba(9,39,235,0.7) 100%), url(${people})`}} >
+        <button className="notfound-btn" onClick={() => props.history.push("/")}>
+          >>> Log out
+        </button>
         <div className="header-title"><h2>Employee Register</h2></div>
       </div>
       <div className="register-container">

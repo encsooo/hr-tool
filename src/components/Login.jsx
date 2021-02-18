@@ -6,7 +6,7 @@ import { authenticated }  from "../store/actions/authenticationAction"
 import Laptop from '../assets/laptop.jpg';
 import allData from "../data/userData";
 
-const Login = () => {
+const Login = (props) => {
 
   const authenticatedState = useSelector((state)=>state.authenticationReducer);
   const dispatch = useDispatch()
@@ -60,8 +60,14 @@ const Login = () => {
   return (
     <main>
       <div className="header-container" style={{background: `linear-gradient(0deg, rgba(9,39,235,0.7) 0%, rgba(9,39,235,0.7) 100%), url(${Laptop})`}}>
+          <button
+              className="notfound-btn"
+              onClick={() => props.history.push("/")}
+            >
+              >>> Go Home
+            </button>
           <div className="header-title">
-          <h2>Please log in</h2>
+            <h2>Please log in</h2>
           </div>
       </div>
         <form className="login-inner-container">
