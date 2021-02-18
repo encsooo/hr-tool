@@ -59,11 +59,13 @@ const EmployeeRegister = () => {
     })
   }
 
-  const handleDelete = (e) => {
-    e.preventDefault()
-  const employeeid = e.target.id
-    dispatch(deleteEmployeeAction(employeeid)) 
-    //console.log(e.target.id)
+  const handleDelete = (employeeId) => {
+    dispatch(deleteEmployeeAction(employeeId))
+  }
+
+  const [editToggle, setEditToggle] = useState(false)
+  const handleEdit = () =>{
+    setEditToggle(!editToggle)
   }
 
   
@@ -123,20 +125,32 @@ const EmployeeRegister = () => {
         
       </form>
       <table className="employees-container">
-        <tbody>
         {employeesData.map((employee) =>
           <tr key={employee.id} className="registered-employee">
+
             <td>{employee.firstName}</td>
             <td>{employee.secondName}</td>
             <td>{employee.title}</td>
             <td>{employee.id}</td>
             <td>{employee.admin ? <i className="fas fa-check"></i> : ""}</td>
-            <td><button className="employee-edit-btn"><i className="fas fa-pen"></i></button></td>
-            <td><button onClick={handleDelete} id={employee.id}className="employee-edit-btn"><i className="fas fa-trash-alt"></i></button></td>
-          </tr>)
+            <td><button className="employee-edit-btn" onClick={handleEdit}><i className="fas fa-pen"></i></button></td>
+            <td><button onClick={() => handleDelete(employee.id)} className="employee-edit-btn"><i className="fas fa-trash-alt"></i></button></td>
+          </tr>
+          )
         }
-        </tbody>
+
+        <section className={editToggle?"edit-employees-modal-visible":"edit-employees-modal-hidden"}>
+          <input type="text" placeholder="First Name" name="firstName"></input>
+          <input type="text" placeholder="Second Name" name="secondName"></input>
+          <input type="text" placeholder="Title" name="title"></input>
+          <input type="checkbox" name="admin" />
+          <label className="register-checkbox-label" htmlFor="admin"> Admin </label>
+          <button className="edit-employees-modal-btn">Submit</button>
+        </section>
       </table> 
+
+      
+
       </div>
     </>
     )
