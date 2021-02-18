@@ -40,6 +40,7 @@ button,
 .top-right-btn {
   padding: 1rem 2rem;
   border: 1px solid white;
+<<<<<<< HEAD
   position: fixed;
   right: 50px;
   top: 40px;
@@ -77,22 +78,26 @@ button,
   background-color: blue;
   box-shadow: 2px 1px gray;
   transform: translateY(2px);
+=======
+  position: absolute;
+  right: 55px;
+  top: 70px;
+>>>>>>> 0cf2c361340394e57afeddf63c9f9e58f089c433
 }
 
 /* HEADER */
 .header-container {
   width: 100%;
-  position: fixed;
-  top: 0;
-  height: 30%;
+  position: relative;
+  height: 35%;
 }
 
 .header-title {
   font-size: 2.5rem;
   position: absolute;
   text-align: center;
-  top: 45%;
-  left: 10%;
+  top: 35%;
+  left: 6%;
   padding: 1rem 3rem;
   background-color: white;
   font-family: "Space Mono", monospace;
@@ -127,10 +132,15 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 20%;
-  margin: 15% auto;
+  width: 300px;
+  height: 65%;
+  margin: 0 auto;
   align-items: center;
   border-left: 1px solid black;
+}
+
+.header-title h2 {
+  font-size: 4rem;
 }
 
 .login-inner-container * {
@@ -147,6 +157,10 @@ h1 {
   font-size: 1.5rem;
 }
 
+.login-btn {
+  margin-right: 60px;
+}
+
 /* NOT FOUND */
 .notfound-main {
   margin: 10% auto;
@@ -155,7 +169,9 @@ h1 {
 }
 
 .notfound-btn {
-  margin-left: 30px;
+  position: absolute;
+  top: 20px;
+  right: 30px;
 }
 
 .notfound {
@@ -172,10 +188,10 @@ h1 {
 
 /* ALL USERS */
 .user-container {
-  margin: 18% auto 50px;
-  width: 80%;
+  margin: 10% auto;
+  width: 95%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
   gap: 3rem;
 }
 
@@ -223,7 +239,7 @@ img {
 
 /* EMPLOYEE */
 .employee-main {
-  margin: 25% auto 50px;
+  margin: 5% auto;
   width: 80%;
   border-left: 2px solid blue;
   padding: 2rem;
@@ -236,7 +252,7 @@ img {
 
 /* EMPLOYEE REGISTER */
 .register-container {
-  margin: 25% auto 50px;
+  margin: 10% auto;
   width: 80%;
 }
 
@@ -282,6 +298,31 @@ td {
   padding: 1.5rem;
 }
 
+<<<<<<< HEAD
+=======
+.employee-edit-btn {
+  padding: 5px 10px;
+}
+
+/* EDIT MODAL */
+.edit-employees-modal-visible {
+  width: 30%;
+  box-shadow: 0px 0px 5px gray;
+}
+
+.edit-employees-modal-hidden {
+  display: none;
+  width: 30%;
+  box-shadow: 0px 0px 5px gray;
+}
+
+.employee-register-btn {
+  background-color: rgb(20, 41, 179);
+  color: rgb(255, 255, 255);
+  border: none;
+}
+
+>>>>>>> 0cf2c361340394e57afeddf63c9f9e58f089c433
 /* MODAL */
 .modal-form {
   width: 100%;
@@ -335,4 +376,17 @@ td {
   position: absolute;
   right: 4rem;
   top: 2rem;
+/* CHECKIN PAGE */
+
+.checkin-container {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.checkin-header {
+  height: 30%;
 }
