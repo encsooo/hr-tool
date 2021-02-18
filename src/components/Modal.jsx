@@ -5,10 +5,10 @@ import EmployeeRegister from './EmployeeRegister'
 const MODAL_STYLES = {
     position: 'fixed',
     top: '50%',
-    left: '50%',
+    left: '48%',
     transform: 'translate(-50%, -50%)',
     backgroundColor: 'white',
-    padding: '50px',
+    padding: '6rem',
     zIndex: 1000
 }
 
@@ -30,37 +30,46 @@ export default function Modal({ open, onClose, submitHandler, changeHandler, for
         <>
             <div style={OVERLAY_STYLES} />
             <div style={MODAL_STYLES}>
-                <button onClick={onClose}>X</button>
+                <button className="onclose-btn table-btn" onClick={onClose}> <i class="fa fa-times"></i> </button>
+
                 <form className="modal-form" onSubmit={submitHandler}>
-                    <label className="modal-label" htmlFor="firstName"></label>
-                    <input onChange={changeHandler}
-                        className="modal-input"
-                        type="text"
-                        id="firstName"
-                        name="firstName"
-                        value={formData.firstName}
-                        placeholder="First Name"
-                    />
+                    <div className="flex-item">
+                        <label className="modal-label" htmlFor="firstName"></label>
+                        <input onChange={changeHandler}
+                            className="modal-input"
+                            type="text"
+                            id="firstName"
+                            name="firstName"
+                            value={formData.firstName}
+                            placeholder="First Name"
+                        />
+                    </div>
+                    
+                    <div className="flex-item">
+                        <label className="modal-label" htmlFor="secondName"></label>
+                        <input onChange={changeHandler}
+                            className="modal-input"
+                            type="text"
+                            id="secondName"
+                            name="secondName"
+                            value={formData.secondName}
+                            placeholder="Last Name"
+                        />
+                    </div>
+                    
 
-                    <label className="modal-label" htmlFor="secondName"></label>
-                    <input onChange={changeHandler}
-                        className="modal-input"
-                        type="text"
-                        id="secondName"
-                        name="secondName"
-                        value={formData.secondName}
-                        placeholder="Last Name"
-                    />
-
-                    <label className="modal-label" htmlFor="title"></label>
-                    <input onChange={changeHandler}
-                        className="modal-input"
-                        type="text"
-                        id="title"
-                        name="title"
-                        value={formData.title}
-                        placeholder="Title"
-                    />
+                    <div className="flex-item">
+                        <label className="modal-label" htmlFor="title"></label>
+                        <input onChange={changeHandler}
+                            className="modal-input"
+                            type="text"
+                            id="title"
+                            name="title"
+                            value={formData.title}
+                            placeholder="Title"
+                        />
+                    </div>
+                    
                     <div className="checkbox-container">
                         <input onChange={changeHandler}
                             className="modal-checkbox"
@@ -74,8 +83,10 @@ export default function Modal({ open, onClose, submitHandler, changeHandler, for
                         </label>
                     </div>
                     
-
-                    <input type="submit" className="register-btn"/>
+                    <div className="flex-item">
+                        <input type="submit" className="register-btn" />
+                    </div>
+                    
                 </form>
 
             </div>      
