@@ -8,7 +8,6 @@ import { addEmployeeAction, getEmployeesAction } from "../store/actions/employee
 
 import allData from "../data/userData"
 import userData from "../data/userData"
-import {nanoid} from "nanoid"
 
 const EmployeeRegister = () => { 
     // const isAuthenticated = useSelector((state) => state);
@@ -57,7 +56,7 @@ const EmployeeRegister = () => {
       admin: false
     })
   }
-  
+
   return (
     <>
       <div className="header-container" style={{background: `linear-gradient(0deg, rgba(9,39,235,0.7) 0%, rgba(9,39,235,0.7) 100%), url(${people})`}} >

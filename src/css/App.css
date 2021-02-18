@@ -35,6 +35,8 @@ button {
 }
 
 .top-right-btn {
+  padding: 1rem 2rem;
+  border: 1px solid white;
   position: fixed;
   right: 50px;
   top: 40px;
@@ -151,6 +153,13 @@ h1 {
   color: blue;
 }
 
+.individual-user h4,
+p {
+  font-size: 1.2rem;
+  font-family: Helvetica, sans-serif;
+  font-weight: lighter;
+}
+
 img {
   width: 50%;
 }
@@ -197,26 +206,45 @@ img {
 .register-form {
   width: 100%;
   margin: 2rem 0rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.4rem;
+}
+
+.register-checkbox-label {
+  margin: 0 1.5rem 0 0.3rem;
 }
 
 .register-form input[type="text"] {
   width: 20%;
   padding: 0.5rem;
   margin: 1rem 2rem;
-  /* display: inline-block; */
   border: none;
   border-bottom: 1px solid blue;
-  /* box-sizing: border-box; */
+}
+
+.register-form input[type="text"]:focus {
+  outline: none;
 }
 
 table {
   width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: larger;
 }
 
-tr:nth-child(even) {
+/* tr:nth-child(even) {
   background-color: rgba(38, 0, 255, 0.171);
+} */
+
+tr {
+  border-bottom: 0.5px solid rgb(0, 0, 158);
+}
+
+tr:hover {
+  background-color: rgba(38, 0, 255, 0.105);
 }
 
 td {
-  padding: 1rem;
+  padding: 1.5rem;
 }
