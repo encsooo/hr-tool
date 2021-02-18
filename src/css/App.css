@@ -244,10 +244,6 @@ table {
   font-size: larger;
 }
 
-/* tr:nth-child(even) {
-  background-color: rgba(38, 0, 255, 0.171);
-} */
-
 tr {
   border-bottom: 0.5px solid rgb(0, 0, 158);
 }
@@ -280,4 +276,39 @@ td {
   background-color: rgb(20, 41, 179);
   color: rgb(255, 255, 255);
   border: none;
+}
+
+/* MODAL */
+.modal-form {
+  width: 100%;
+  margin: 2rem 0rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.checkbox-container {
+  display: inline-block;
+  /* flex-direction: column; */
+}
+/* .modal-checkbox {
+  margin: 0 0 0 4rem;
+}
+
+.modal-checkbox-label {
+  margin: 0 0 0 6rem;
+} */
+
+.modal-form input[type="text"] {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 1rem 1rem;
+  border: none;
+  border-bottom: 1px solid blue;
+}
+
+.modal-form input[type="text"]:focus {
+  outline: none;
 }
