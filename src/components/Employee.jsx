@@ -1,11 +1,18 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { Redirect } from "react-router-dom";
 import Train from "../assets/train.jpg";
 import allData from "../data/userData"
 
 export default function Employee (props){
     let userID = props.location.id;
     let userData = allData.find(user => user.id === userID);
-    console.log(userData);
+    const isAuthenticated = useSelector((state) => state);
+
+    console.log(isAuthenticated);
+
+    if (!isAuthenticated.authReducer){ return <Redirect to="/notFound404" />;}
+    else if(isAuthenticated.authReducer==="employee"){
     return(
         <>
         <div className="header-container" style={{background: `linear-gradient(0deg, rgba(9,39,235,0.7) 0%, rgba(9,39,235,0.7) 100%), url(${Train})`}}>
@@ -22,4 +29,5 @@ export default function Employee (props){
         </div>
         </>
     )
+}
 }

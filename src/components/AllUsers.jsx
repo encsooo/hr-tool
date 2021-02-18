@@ -1,8 +1,6 @@
 import React from 'react'
 import userData from '../data/userData'
 
-
-
 import User from './User'
 
 const AllUsers = () => {
