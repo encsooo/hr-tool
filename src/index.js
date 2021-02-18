@@ -3,9 +3,8 @@ import ReactDOM from 'react-dom';
 import Routes from './components/Routes';
 import {createStore} from "redux";
 import {Provider} from "react-redux"
-import './css/App.css'
 import { allReducers } from './store/reducers/allReducers';
-
+import './css/App.css'
 
 const store = createStore(
   allReducers,

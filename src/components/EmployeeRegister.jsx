@@ -8,10 +8,12 @@ import { addEmployeeAction, getEmployeesAction, deleteEmployeeAction } from "../
 
 import allData from "../data/userData"
 import userData from "../data/userData"
+import Modal from "./Modal"
 
 const EmployeeRegister = () => { 
      //const isAuthenticated = useSelector((state) => state);
      //if (!isAuthenticated) return <Redirect to="/notFound404" />;
+  const [isOpen, setIsOpen] = useState(false)
   
    useEffect(() => {
     // const allDataJson = JSON.stringify(allData)
@@ -129,7 +131,11 @@ const EmployeeRegister = () => {
             <td>{employee.title}</td>
             <td>{employee.id}</td>
             <td>{employee.admin ? <i className="fas fa-check"></i> : ""}</td>
-            <td><button className="employee-edit-btn"><i className="fas fa-pen"></i></button></td>
+
+            <td><button onClick={() => setIsOpen(true)} className="employee-edit-btn"><i className="fas fa-pen"></i></button>
+              <Modal open={isOpen} onClose={() => setIsOpen(false)} changeHandler={changeHandler} submitHandler={submitHandler} formData={formData} employee={employee}></Modal>
+            </td>
+            
             <td><button onClick={() => handleDelete(employee.id)} className="employee-edit-btn"><i className="fas fa-trash-alt"></i></button></td>
           </tr>)
         }
