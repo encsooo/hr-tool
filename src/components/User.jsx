@@ -10,7 +10,7 @@ const User = ({user}) => {
         <div key={id} className="individual-user">
             <img src={urlPhoto} alt={firstName}/>
             <h3>{firstName} {secondName}</h3>
-            <h4>ID: {id} - {username}</h4>
+            <h4>ID: {username}</h4>
             <h4>{title}</h4>
             <div className={dropdown ? `${"toggle-active"}` : `${"toggle-inactive"}`}>
                 <p>Admin: {admin ? "yes" : "no"}</p>
