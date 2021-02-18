@@ -10,16 +10,15 @@ import allData from "../data/userData"
 import userData from "../data/userData"
 import Modal from "./Modal"
 
-const EmployeeRegister = () => { 
+const EmployeeRegister = (props) => { 
      //const isAuthenticated = useSelector((state) => state);
      //if (!isAuthenticated) return <Redirect to="/notFound404" />;
   const [isOpen, setIsOpen] = useState(false)
   
    useEffect(() => {
     // const allDataJson = JSON.stringify(allData)
-    // localStorage.setItem('myData', allDataJson)
+    //  localStorage.setItem('myData', allDataJson)
      dispatch(getEmployeesAction()) 
-     //console.log("useEffect");
    }, [])
   
    const dispatch = useDispatch()
@@ -66,10 +65,18 @@ const EmployeeRegister = () => {
     dispatch(deleteEmployeeAction(employeeId))
   }
 
+  const [editToggle, setEditToggle] = useState(false)
+  const handleEdit = () =>{
+    setEditToggle(!editToggle)
+  }
+
   
   return (
     <>
       <div className="header-container" style={{background: `linear-gradient(0deg, rgba(9,39,235,0.7) 0%, rgba(9,39,235,0.7) 100%), url(${people})`}} >
+        <button className="notfound-btn" onClick={() => props.history.push("/")}>
+          >>> Log out
+        </button>
         <div className="header-title"><h2>Employee Register</h2></div>
       </div>
       <div className="register-container">
@@ -123,9 +130,9 @@ const EmployeeRegister = () => {
         
       </form>
       <table className="employees-container">
-        <tbody>
         {employeesData.map((employee) =>
           <tr key={employee.id} className="registered-employee">
+
             <td>{employee.firstName}</td>
             <td>{employee.secondName}</td>
             <td>{employee.title}</td>
@@ -135,12 +142,26 @@ const EmployeeRegister = () => {
             <td><button onClick={() => setIsOpen(true)} className="employee-edit-btn"><i className="fas fa-pen"></i></button>
               <Modal open={isOpen} onClose={() => setIsOpen(false)} changeHandler={changeHandler} submitHandler={submitHandler} formData={formData} employee={employee}></Modal>
             </td>
-            
+      
+            <td><button className="employee-edit-btn" onClick={handleEdit}><i className="fas fa-pen"></i></button></td>
+
             <td><button onClick={() => handleDelete(employee.id)} className="employee-edit-btn"><i className="fas fa-trash-alt"></i></button></td>
-          </tr>)
+          </tr>
+          )
         }
-        </tbody>
+
+        <section className={editToggle?"edit-employees-modal-visible":"edit-employees-modal-hidden"}>
+          <input type="text" placeholder="First Name" name="firstName"></input>
+          <input type="text" placeholder="Second Name" name="secondName"></input>
+          <input type="text" placeholder="Title" name="title"></input>
+          <input type="checkbox" name="admin" />
+          <label className="register-checkbox-label" htmlFor="admin"> Admin </label>
+          <button className="edit-employees-modal-btn">Submit</button>
+        </section>
       </table> 
+
+      
+
       </div>
     </>
     )
