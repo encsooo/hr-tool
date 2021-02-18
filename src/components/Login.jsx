@@ -2,8 +2,9 @@ import React, { useState, useRef, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import {useSelector, useDispatch} from "react-redux"
 
-import { authenticated }  from "../actions/authenticationAction"
+import { authenticated }  from "../store/actions/authenticationAction"
 import Laptop from '../assets/laptop.jpg';
+import allData from "../data/userData";
 
 const Login = () => {
 
@@ -12,13 +13,10 @@ const Login = () => {
 
   const [formData, setFormData] = useState({ username: "", password: "" });
   const [redirect, setRedirect] = useState("");
+  // SEND THE ID THROUGH PROPS SO WE KNOW WHICH USER IS IT
+  const [userID, setUserID] = useState(0)  
 
   const inputRef = useRef();
-
-  // const NAME = process.env.REACT_APP_NAME;
-  // const PASSWORD = process.env.REACT_APP_PASSWORD;
-  const NAME = "Bella"
-  const PASSWORD = "1234"
 
   useEffect(() => {
     inputRef.current.focus();
@@ -33,26 +31,36 @@ const Login = () => {
     setRedirect(checkLoginInfo());
   };
 
+  
   const checkLoginInfo = () => {
-    if (formData.username === NAME && formData.password === PASSWORD) {
-      return "success";
-    } else {
-      return "please try again";
+    const permissionCheck = allData.reduce((acc,user)=>{
+      if(formData.username===user.username && formData.password===user.password && user.admin){
+        acc = "admin"
+      } else if(formData.username===user.username && formData.password===user.password && !user.admin){
+        acc = "employee"
+        setUserID(user.id)
+      }
+      return acc
+    },"")
+   
+    if(permissionCheck===""){
+      return "wrong"
+    }else{
+      return permissionCheck
     }
   };
 
-  if (redirect === "success") {
+  if (redirect === "admin") {
     dispatch(authenticated())
     return <Redirect to={{ pathname: "/admin", username: formData.username }} />;
-  } else if (redirect === "please try again") {
-    // return <p>You flipped up</p>;
+  } else if (redirect === "employee") {
+    return <Redirect to={{ pathname: "/employee", id: userID}} />;
   }
 
   return (
     <main>
-      
-      <div className="login-container" style={{background: `linear-gradient(0deg, rgba(9,39,235,0.7) 0%, rgba(9,39,235,0.7) 100%), url(${Laptop})`}}>
-          <div className="login-title">
+      <div className="header-container" style={{background: `linear-gradient(0deg, rgba(9,39,235,0.7) 0%, rgba(9,39,235,0.7) 100%), url(${Laptop})`}}>
+          <div className="header-title">
           <h2>Please log in</h2>
           </div>
       </div>
@@ -78,8 +86,8 @@ const Login = () => {
               onChange={changeHandler}
             />
           </div>
-          <button className="form-login-btn" onClick={submitHandler}>Login</button>
-          {redirect==="please try again"&& <p className="warning">Wrong Name or Password</p>}
+          <button className="top-right-btn" onClick={submitHandler}>Login</button>
+          {redirect==="wrong"&& <p className="warning">Wrong Name or Password</p>}
         </form>
       
     </main>
