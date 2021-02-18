@@ -312,3 +312,18 @@ td {
 .modal-form input[type="text"]:focus {
   outline: none;
 }
+
+/* CHECKIN PAGE */
+
+.checkin-container {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.checkin-header {
+  height: 30%;
+}
