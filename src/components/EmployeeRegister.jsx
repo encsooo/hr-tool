@@ -60,11 +60,8 @@ const EmployeeRegister = () => {
     })
   }
 
-  const handleDelete = (e) => {
-    e.preventDefault()
-  const employeeid = e.target.id
-    dispatch(deleteEmployeeAction(employeeid)) 
-    //console.log(e.target.id)
+  const handleDelete = (employeeId) => {
+    dispatch(deleteEmployeeAction(employeeId))
   }
 
   
@@ -133,7 +130,7 @@ const EmployeeRegister = () => {
             <td>{employee.id}</td>
             <td>{employee.admin ? <i className="fas fa-check"></i> : ""}</td>
             <td><button className="employee-edit-btn"><i className="fas fa-pen"></i></button></td>
-            <td><button onClick={handleDelete} id={employee.id}className="employee-edit-btn"><i className="fas fa-trash-alt"></i></button></td>
+            <td><button onClick={() => handleDelete(employee.id)} className="employee-edit-btn"><i className="fas fa-trash-alt"></i></button></td>
           </tr>)
         }
         </tbody>
