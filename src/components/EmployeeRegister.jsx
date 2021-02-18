@@ -132,11 +132,11 @@ const EmployeeRegister = () => {
             <td>{employee.id}</td>
             <td>{employee.admin ? <i className="fas fa-check"></i> : ""}</td>
 
-            <td><button onClick={() => setIsOpen(true)} className="employee-edit-btn"><i className="fas fa-pen"></i></button>
+            <td><button className="table-btn" onClick={() => setIsOpen(true)}><i className="fas fa-pen"></i></button>
               <Modal open={isOpen} onClose={() => setIsOpen(false)} changeHandler={changeHandler} submitHandler={submitHandler} formData={formData} employee={employee}></Modal>
             </td>
             
-            <td><button onClick={() => handleDelete(employee.id)} className="employee-edit-btn"><i className="fas fa-trash-alt"></i></button></td>
+            <td><button className="table-btn" onClick={() => handleDelete(employee.id)}><i className="fas fa-trash-alt"></i></button></td>
           </tr>)
         }
         </tbody>
