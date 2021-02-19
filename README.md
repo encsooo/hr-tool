@@ -8,13 +8,9 @@ With this tool, HR managers can easily visualize, edit and delete employee data 
 
 More features like attendance and time tracking will follow in the future✨
 
----
-
 ## Stack
 
 This HR tool is built in **React.js** and styled with **CSS**.
-
----
 
 ## Development
 
