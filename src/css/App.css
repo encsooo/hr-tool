@@ -40,7 +40,6 @@ button,
 .top-right-btn {
   padding: 1rem 2rem;
   border: 1px solid white;
-<<<<<<< HEAD
   position: fixed;
   right: 50px;
   top: 40px;
@@ -78,11 +77,6 @@ button,
   background-color: blue;
   box-shadow: 2px 1px gray;
   transform: translateY(2px);
-=======
-  position: absolute;
-  right: 55px;
-  top: 70px;
->>>>>>> 0cf2c361340394e57afeddf63c9f9e58f089c433
 }
 
 /* HEADER */
@@ -298,8 +292,6 @@ td {
   padding: 1.5rem;
 }
 
-<<<<<<< HEAD
-=======
 .employee-edit-btn {
   padding: 5px 10px;
 }
@@ -322,7 +314,6 @@ td {
   border: none;
 }
 
->>>>>>> 0cf2c361340394e57afeddf63c9f9e58f089c433
 /* MODAL */
 .modal-form {
   width: 100%;
@@ -376,6 +367,7 @@ td {
   position: absolute;
   right: 4rem;
   top: 2rem;
+}
 /* CHECKIN PAGE */
 
 .checkin-container {
