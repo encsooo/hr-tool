@@ -1,18 +1,24 @@
 # HR Management Desktop App
 
+## About
+
 This project was inspired by the frustration experienced while working in companies with old-fashioned softwares.
 
 With this tool, HR managers can easily visualize, edit and delete employee data and, at the same time, those employees are able to manage their own.
 
-More features like attendance and time racking will follow in the future✨
+More features like attendance and time tracking will follow in the future✨
 
-## The Stack
+---
 
-This HR tool is built in React.js and styled with CSS.
+## Stack
+
+This HR tool is built in **React.js** and styled with **CSS**.
+
+---
 
 ## Development
 
-This project was developed during a period of seven days following the Agile methodology, focusing in adaptative planning and continual improvement.
+This project was developed during a period of seven days following the **Agile** methodology, focusing in adaptative planning and continual improvement.
 
 We begun with a brief brainstorming session with a digital Jamboard that allowed us to share and connect ideas.
 
@@ -22,15 +28,21 @@ Then we started coding!
 
 In the first two days we focused on creating the structure of the website i.e.:
 
-- a landing page with a login button that redirects to
-- a login page, where "admins" or regular employees can introduced their unique ID's(\*) and passwords to gain access to the site.
-- When an admin logs in, an employee overview page will appear. Also linked to this page there is an
-- employee register where data of employees can be added, edited and deleted.
-- In case of logging in as regular employee, only a specific information for this user will appear.
+- a **landing page** with a login button that redirects to
+- a **login page**, where "admins" or regular employees can introduced their unique ID's(\*) and passwords to gain access to the site.
+- When an admin logs in, an **employee list** overview page will appear. Also linked to this page there is an
+- **employee register** where data of employees can be added, edited and deleted.
+- In case of logging in as regular employee, only a specific information for this **user** will appear.
 
 (\*)For generating the IDs we used [Nano ID](https://github.com/ai/nanoid), a small yet powerful JS library that generates string IDs.
 
 During the next four days we extensively worked in the functionally of each feature, also facing the biggest challenge: working with the localStorage of our browsers as a backend for the employee register page.
+
+**_More info will follow_**
+
+---
+
+## Contribute to this project:
 
 ## Install Dependencies
 
@@ -78,6 +90,8 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+---
 
 ### Developers
 
