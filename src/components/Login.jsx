@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 import {useSelector, useDispatch} from "react-redux"
 
 import { authenticated }  from "../store/actions/authenticationAction"
@@ -7,6 +7,7 @@ import Laptop from '../assets/laptop.jpg';
 import allData from "../data/userData";
 
 const Login = (props) => {
+  const history = useHistory()
 
   const authenticatedState = useSelector((state)=>state.authenticationReducer);
   const dispatch = useDispatch()
@@ -57,14 +58,21 @@ const Login = (props) => {
     return <Redirect to={{ pathname: "/employee", id: userID}} />;
   }
 
+
   return (
     <main>
       <div className="header-container" style={{background: `linear-gradient(0deg, rgba(9,39,235,0.7) 0%, rgba(9,39,235,0.7) 100%), url(${Laptop})`}}>
           <button
               className="notfound-btn"
-              onClick={() => props.history.push("/")}
+              onClick={() => history.push("/")}
             >
-              To Main Page
+          To Main Page
+            </button>
+        <button
+              className="notfound-btn"
+              onClick={() => history.goBack()}
+            >
+          Go Back
             </button>
           <div className="header-title">
             <h2>Please log in</h2>
