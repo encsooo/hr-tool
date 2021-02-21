@@ -5,8 +5,6 @@ import { Redirect } from "react-router-dom";
 import { nanoid } from "nanoid"
 import people from "../assets/people.jpg"
 import { addEmployeeAction, getEmployeesAction, deleteEmployeeAction } from "../store/actions/employeesActions"
-
-import allData from "../data/userData"
 import userData from "../data/userData"
 import Modal from "./Modal"
 
@@ -17,7 +15,7 @@ const EmployeeRegister = (props) => {
   
    useEffect(() => {
     // const allDataJson = JSON.stringify(allData)
-    //  localStorage.setItem('myData', allDataJson)
+    // localStorage.setItem('myData', allDataJson)
      dispatch(getEmployeesAction()) 
    }, [])
   
