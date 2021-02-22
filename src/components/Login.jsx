@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 import {useSelector, useDispatch} from "react-redux"
 
 import { adminLogin,employeeLogin }  from "../store/actions/authenticationAction"
@@ -7,6 +7,7 @@ import Laptop from '../assets/laptop.jpg';
 import allData from "../data/userData";
 
 const Login = (props) => {
+  const history = useHistory()
 
   const dispatch = useDispatch()
 
@@ -59,14 +60,15 @@ const Login = (props) => {
     return <Redirect to={{ pathname: "/employee", id: userID}} />;
   }
 
+
   return (
     <main>
       <div className="header-container" style={{background: `linear-gradient(0deg, rgba(9,39,235,0.7) 0%, rgba(9,39,235,0.7) 100%), url(${Laptop})`}}>
           <button
-              className="notfound-btn"
-              onClick={() => props.history.push("/")}
+              className="top-right-btn"
+              onClick={() => history.push("/")}
             >
-              >>> Go Home
+          To Main Page
             </button>
           <div className="header-title">
             <h2>Please log in</h2>
@@ -95,7 +97,7 @@ const Login = (props) => {
               onChange={changeHandler}
             />
           </div>
-          <button className="top-right-btn" onClick={submitHandler}>Login</button>
+          <button className="login-btn" onClick={submitHandler}>Login</button>
           {redirect==="wrong"&& <p className="warning">Wrong Name or Password</p>}
         </form>
       

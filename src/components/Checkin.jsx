@@ -1,16 +1,9 @@
 import React, {useState, useRef, useEffect} from 'react'
 import allData from '../data/userData'
 
-import checkins from '../data/timeStamp'
-
 const Checkin = () => {
-// let today = new Date;
-// console.log(today)
-// let timestamp = today.valueOf()
-// console.log(timestamp)
-
 const [checkinData, getGetcheckinData] = useState({username: ""})
-const [time, getTime] = useState("")
+const [toggle, changeToggle] = useState(false)
 
 const inputRef = useRef();
 
@@ -18,49 +11,42 @@ const inputRef = useRef();
     inputRef.current.focus();
   }, []);
 
+  const toggleHandler = () => {
+    changeToggle(!toggle);
+  }
+
   const changeHandler = (e) => {
     getGetcheckinData({ ...checkinData, [e.target.name]: e.target.value });
   };
 
-
   const submitHandler = (e) => {
     e.preventDefault();
-    createLogin();
+    checkLoginInfo();
   };
-
-   
+ 
   const checkLoginInfo = () => {
     const isTheLoginCorrect = allData.reduce((acc, user)=>{
       if(checkinData.username===user.username){
         acc = "success"
         console.log("right")
-      } else {
-          acc = "wrong"
-          console.log("wrong")
       }
       return acc
     },"")
    
    if (isTheLoginCorrect==="success"){
-      return createLogin
+      toggleHandler()
+    } else {
+      console.log("sucker")
     }
   };
-
-  const createLogin = () => {
-      let d = new Date()
-      const today = `${d.getDate()}${d.getMonth() + 1}${d.getFullYear()}`
-
-    checkins.forEach(date => {
-        if(today in date){
-            console.log("found!!");
-        }
-    })
-   
-  }
-
     return (
         <div className="checkin-container">
-            <input
+          <div className="checkin-header">
+          <div className={toggle ? `${"toggle-active"}` : `${"toggle-inactive"}`}>
+                <p>Hi</p>
+            </div>
+          </div>
+          <input
           className="ckeckin-input"
           type="text"
           name="username"
@@ -76,3 +62,15 @@ const inputRef = useRef();
 }
 
 export default Checkin
+
+
+  // const createLogin = () => {
+  //     let d = new Date()
+  //     const today = `${d.getDate()}${d.getMonth() + 1}${d.getFullYear()}`
+
+  //   checkins.forEach(date => {
+  //       if(today in date){
+  //           console.log("found!!");
+  //       }
+  //   })
+  //}

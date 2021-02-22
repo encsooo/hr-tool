@@ -13,7 +13,7 @@ const Home = () => {
       >
         <Link to="/login">
           <button className="top-right-btn">
-            Log in <span>>>></span>
+            Log in
           </button>
         </Link>
         <h1 className="hero-headline">Megacorp Employee Page</h1>

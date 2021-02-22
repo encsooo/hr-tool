@@ -4,18 +4,25 @@ import { nanoid } from "nanoid"
 import people from "../assets/people.jpg"
 import { addEmployeeAction, getEmployeesAction, deleteEmployeeAction, editEmployeesAction } from "../store/actions/employeesActions"
 import {adminLogin }  from "../store/actions/authenticationAction"
-
+import { Redirect, useHistory } from "react-router-dom";
 // import allData from "../data/userData"
+import people from "../assets/people.jpg"
+import { addEmployeeAction, getEmployeesAction, deleteEmployeeAction } from "../store/actions/employeesActions"
+import userData from "../data/userData"
 import Modal from "./Modal"
-import { Redirect } from 'react-router-dom';
 
 
 const EmployeeRegister = (props) => { 
+
   const isAuthenticated = useSelector((state) => state);
+
+  const history = useHistory()
+  const [isOpen, setIsOpen] = useState(false)
+
   
   // ON LOAD FILL THE LIST WITH EMPLOYEE
    useEffect(() => {
-    // const allDataJson = JSON.stringify(allData)
+    //  const allDataJson = JSON.stringify(allData)
     //  localStorage.setItem('myData', allDataJson)
      dispatch(getEmployeesAction())
      dispatch(adminLogin())
@@ -43,12 +50,37 @@ const EmployeeRegister = (props) => {
     const value = e.target.type === "checkbox" ? e.target.checked : e.target.value;
     setFormData({ ...formData, [e.target.name]: value });
   };
+
+  function randomUserName(formData){
+    const firstName = formData.firstName.split("")
+    const secondName = formData.secondName.split("")
+    
+    const randomUserName = `${firstName[Math.floor(Math.random() * Math.floor(firstName.length))]}${firstName[Math.floor(Math.random() * Math.floor(firstName.length))]}${firstName[Math.floor(Math.random() * Math.floor(firstName.length))]}${secondName[Math.floor(Math.random() * Math.floor(secondName.length))]}${secondName[Math.floor(Math.random() * Math.floor(secondName.length))]}${secondName[Math.floor(Math.random() * Math.floor(secondName.length))]}`
+
+    return randomUserName;
+  }
+
+  function randomPassword(formData){
+    const firstName = formData.firstName.split("")
+    const secondName = formData.secondName.split("")
+    
+    const randomPassword = `${firstName[Math.floor(Math.random() * Math.floor(firstName.length))].toUpperCase()}${Math.floor(Math.random() * Math.floor(firstName.length))}${firstName[Math.floor(Math.random() * Math.floor(firstName.length))]}${firstName[Math.floor(Math.random() * Math.floor(firstName.length))].toUpperCase()}${Math.floor(Math.random() * Math.floor(firstName.length))}${secondName[Math.floor(Math.random() * Math.floor(secondName.length))]}${Math.floor(Math.random() * Math.floor(secondName.length))}${secondName[Math.floor(Math.random() * Math.floor(secondName.length))].toUpperCase()}${secondName[Math.floor(Math.random() * Math.floor(secondName.length))]}`
+
+    return randomPassword;
+  }
+
   
 
   //ADD EMPLOYEES ON SUBMIT AND RESET FORMDATA
   const submitHandler = (e) => {
     e.preventDefault()
-    
+
+    const generatedRandomUserName = randomUserName(formData)
+    formData.username = generatedRandomUserName
+
+    const generatedRandomPassword = randomPassword(formData)
+    formData.password = generatedRandomPassword
+
     dispatch(addEmployeeAction(formData)) 
     
     setFormData({
@@ -57,7 +89,7 @@ const EmployeeRegister = (props) => {
       title: "",
       username: "",
       password: "",
-      id: "",
+      id: nanoid(),
       admin: false
     })
   }
@@ -83,15 +115,12 @@ const EmployeeRegister = (props) => {
     <>
       {/* HEADER + LOG OUT BUTTON */}
       <div className="header-container" style={{background: `linear-gradient(0deg, rgba(9,39,235,0.7) 0%, rgba(9,39,235,0.7) 100%), url(${people})`}} >
-        <button className="notfound-btn" onClick={() => props.history.push("/")}>
-          >>> Log out
-        </button>
+        <button className="top-right-btn" onClick={() => props.history.push("/")}>Log out</button>
+        <button className="goback-btn" onClick={() => history.goBack()}>Go Back</button>
         <div className="header-title"><h2>Employee Register</h2></div>
       </div>
 
-
       <div className="register-container">
-
         {/* FORM FOR NEW USER */}
         <form className="register-form" onSubmit={submitHandler}>
           <label className="register-label" htmlFor="firstName">
