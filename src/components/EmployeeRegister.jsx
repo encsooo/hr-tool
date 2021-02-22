@@ -62,9 +62,6 @@ const EmployeeRegister = (props) => {
     return randomPassword;
   }
 
-
-  
-
   
   const submitHandler = (e) => {
     e.preventDefault()
@@ -83,7 +80,7 @@ const EmployeeRegister = (props) => {
       title: "",
       username: "",
       password: "",
-      id: "",
+      id: nanoid(),
       admin: false
     })
   }
