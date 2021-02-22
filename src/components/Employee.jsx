@@ -1,16 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import Train from "../assets/train.jpg";
 import allData from "../data/userData";
+import { getEmployeesAction } from "../store/actions/employeesActions";
+import { employeeLogin } from "../store/actions/authenticationAction";
 
 export default function Employee (props){
     let userID = props.location.id;
-    let userData = allData.find(user => user.id === userID);
+   
     const isAuthenticated = useSelector((state) => state);
 
-    console.log(isAuthenticated);
+    // GET LOCAL STORAGE
+    const dispatch = useDispatch()
+    useEffect(() => {
+       dispatch(getEmployeesAction())
+       dispatch(employeeLogin())
+     }, [])
+
+    const employeesData = useSelector((state) => {
+        return state.employeesReducer.employees
+    })
+
+    let userData = employeesData.find(user => user.id === userID);
+
 
     if (!isAuthenticated.authReducer){ return <Redirect to="/notFound404" />;}
     else if(isAuthenticated.authReducer==="employee"){
@@ -25,11 +39,11 @@ export default function Employee (props){
         <div className="employee-main">
             <p>{userData.firstName} {userData.secondName} | {userData.title}</p>
             <p>{userData.email}</p>
-            <p>{userData.mobile} <i class="fas fa-pencil-alt"></i></p>
+            <p>{userData.mobile} <i className="fas fa-pencil-alt"></i></p>
             <p><b>Emergency Contact: </b>{userData.emergencyContact}</p>
             <Link to= "/checkin"><button>Don't forget to check in</button></Link>
         </div>
         </>
     )
 }
-}
+ }

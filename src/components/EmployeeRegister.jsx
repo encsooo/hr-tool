@@ -1,28 +1,23 @@
 import React, {useState, useEffect} from 'react';  
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect, useHistory } from "react-router-dom";
-// import allData from "../data/userData"
+import { useHistory } from "react-router-dom";
+import allData from "../data/userData"
 import { nanoid } from "nanoid";
 import people from "../assets/people.jpg";
-import userData from "../data/userData";
 import Modal from "./Modal";
 import { addEmployeeAction, getEmployeesAction, deleteEmployeeAction, editEmployeesAction } from "../store/actions/employeesActions"
 import {adminLogin }  from "../store/actions/authenticationAction"
 
 
 const EmployeeRegister = (props) => { 
-
   const isAuthenticated = useSelector((state) => state);
 
   const history = useHistory()
-
   
-  // ON LOAD FILL THE LIST WITH EMPLOYEE
+  // ON LOAD FILL THE LIST WITH EMPLOYEE AND GET LOCAL STORAGE
    useEffect(() => {
-    //  const allDataJson = JSON.stringify(allData)
-    //  localStorage.setItem('myData', allDataJson)
-     dispatch(getEmployeesAction())
-     dispatch(adminLogin())
+      dispatch(getEmployeesAction())
+      dispatch(adminLogin())
    }, [])
   
    const dispatch = useDispatch()
@@ -30,6 +25,7 @@ const EmployeeRegister = (props) => {
    const employeesData = useSelector((state) => {
      return state.employeesReducer.employees
     })
+
 
     //INITIAL INPUT FROM THE NEW USER INPUT
     const [formData, setFormData] = useState({
@@ -48,10 +44,11 @@ const EmployeeRegister = (props) => {
     setFormData({ ...formData, [e.target.name]: value });
   };
 
+
   function randomUserName(formData){
     const firstName = formData.firstName.split("")
     const secondName = formData.secondName.split("")
-    
+
     const randomUserName = `${firstName[Math.floor(Math.random() * Math.floor(firstName.length))]}${firstName[Math.floor(Math.random() * Math.floor(firstName.length))]}${firstName[Math.floor(Math.random() * Math.floor(firstName.length))]}${secondName[Math.floor(Math.random() * Math.floor(secondName.length))]}${secondName[Math.floor(Math.random() * Math.floor(secondName.length))]}${secondName[Math.floor(Math.random() * Math.floor(secondName.length))]}`
 
     return randomUserName;
@@ -66,20 +63,19 @@ const EmployeeRegister = (props) => {
     return randomPassword;
   }
 
-  
-
   //ADD EMPLOYEES ON SUBMIT AND RESET FORMDATA
   const submitHandler = (e) => {
     e.preventDefault()
 
+    // SETS THE USERNAME AND PASSWORD TO THE GENERATORS
     const generatedRandomUserName = randomUserName(formData)
     formData.username = generatedRandomUserName
-
     const generatedRandomPassword = randomPassword(formData)
     formData.password = generatedRandomPassword
 
     dispatch(addEmployeeAction(formData)) 
     
+    // RESETS FORM DATA
     setFormData({
       firstName: "",
       secondName: "",
@@ -106,7 +102,7 @@ const EmployeeRegister = (props) => {
 
   // block this page if not authenticated
   // if (!isAuthenticated.authReducer){ return <Redirect to="/notFound404" />;}
-  // else if(isAuthenticated.authReducer==="admin"){
+  //  else if(isAuthenticated.authReducer==="admin"){
 
   return (
     <>
@@ -192,16 +188,17 @@ const EmployeeRegister = (props) => {
               <td>{employee.title}</td>
               <td>{employee.id}</td>
               <td>{employee.username}</td>
+              <td>{employee.password}</td>
               <td>{employee.admin ? <i className="fas fa-check"></i> : ""}</td>
 
               {/* OPEN EDIT MODAL */}
-              <td><button onClick={()=>handleOpenModal(employee.id)} className="employee-edit-btn"><i className="fas fa-pen"></i></button>
+              <td><button onClick={()=>handleOpenModal(employee.id)} className="table-btn"><i className="fas fa-pen"></i></button>
                 <Modal open={isOpen} onClose={() => setIsOpen(false)} >
                 </Modal>
               </td>
 
               {/* DELETE BUTTON */}
-              <td><button onClick={() => handleDelete(employee.id)} className="employee-edit-btn"><i className="fas fa-trash-alt"></i></button></td>
+              <td><button onClick={() => {handleDelete(employee.id)}} className="table-btn"><i className="fas fa-trash-alt"></i></button></td>
             </tr>
             )
           }
