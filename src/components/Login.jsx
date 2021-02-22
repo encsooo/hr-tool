@@ -9,6 +9,7 @@ import allData from "../data/userData";
 const Login = (props) => {
   const history = useHistory()
 
+  const authenticatedState = useSelector((state) => state.authenticationReducer);
   const dispatch = useDispatch()
 
   const [formData, setFormData] = useState({ username: "", password: "" });

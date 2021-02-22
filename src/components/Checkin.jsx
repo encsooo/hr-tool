@@ -69,7 +69,7 @@ const inputRef = useRef();
 
          </div>
          {redirect === "correct" && <p className="correct">Logged in</p>}
-         {redirect === "incorrect" && <p className="warning">Wrong Name or Password</p>}
+         {redirect === "incorrect" && <p className="warning">Wrong Name</p>}
         </div>
     )
 }
