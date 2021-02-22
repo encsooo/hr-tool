@@ -105,8 +105,8 @@ const EmployeeRegister = (props) => {
   }
 
   // block this page if not authenticated
-  if (!isAuthenticated.authReducer){ return <Redirect to="/notFound404" />;}
-  else if(isAuthenticated.authReducer==="admin"){
+  // if (!isAuthenticated.authReducer){ return <Redirect to="/notFound404" />;}
+  // else if(isAuthenticated.authReducer==="admin"){
 
   return (
     <>
@@ -210,7 +210,7 @@ const EmployeeRegister = (props) => {
       </div>
     </>
   )
-  }
+  // }
 }
 
 export default EmployeeRegister

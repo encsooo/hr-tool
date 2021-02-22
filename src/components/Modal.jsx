@@ -24,7 +24,7 @@ const OVERLAY_STYLES = {
     zIndex: 1000
 }
 
-export default function Modal({ open, onClose, handleOpenModal}) {
+export default function Modal({ open, onClose}) {
     
     const dispatch = useDispatch()
     // GET THE VALUES FROM THE FORM
@@ -50,8 +50,7 @@ export default function Modal({ open, onClose, handleOpenModal}) {
         <>
             <div style={OVERLAY_STYLES} />
             <div style={MODAL_STYLES}>
-
-                <button onClick={onClose}>X</button>
+                <button className="onclose-btn table-btn" onClick={onClose}> <i class="fa fa-times"></i> </button>
 
                 <form className="modal-form" onSubmit={submitHandler}>
                     <div className="flex-item">
