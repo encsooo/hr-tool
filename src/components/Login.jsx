@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Redirect, useHistory } from "react-router-dom";
-import {useSelector, useDispatch} from "react-redux"
-
+import { useSelector, useDispatch } from "react-redux";
+import { authenticated } from "../store/actions/authenticationAction";
 import { adminLogin,employeeLogin }  from "../store/actions/authenticationAction"
 import Laptop from '../assets/laptop.jpg';
 import allData from "../data/userData";

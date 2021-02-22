@@ -32,7 +32,7 @@ In the first two days we focused on creating the structure of the website i.e.:
 
 (\*)For generating the IDs we used [Nano ID](https://github.com/ai/nanoid), a small yet powerful JS library that generates string IDs.
 
-During the next four days we extensively worked in the functionally of each feature, also facing the biggest challenge: working with the localStorage of our browsers as a backend for the employee register page.
+During the next four days we extensively worked in the functionally of each feature, also facing the biggest challenges: working with Redux and also the localStorage of our browsers as a backend for the employee register page.
 
 **_More info will follow_**
 
@@ -98,3 +98,4 @@ To learn React, check out the [React documentation](https://reactjs.org/).
     <td align="center"><a href="https://github.com/laurapacis"><img src="https://avatars.githubusercontent.com/u/67947931?s=400&u=93f0817b71f889b85215b686d62589856f781106&v=4" width="100px;" alt="laurapacis"/><br /><sub><b>laurapacis</b></sub></a><br /><a href="https://github.com/encsooo/hr-tool/commits?author=laurapacis" title="Code">💻</a></td>
   </tr>
 </table>
+`````

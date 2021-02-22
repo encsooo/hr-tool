@@ -1,13 +1,13 @@
 import React, {useState, useEffect} from 'react';  
 import { useDispatch, useSelector } from "react-redux";
-import { nanoid } from "nanoid"
-import people from "../assets/people.jpg"
-import { addEmployeeAction, getEmployeesAction, deleteEmployeeAction, editEmployeesAction } from "../store/actions/employeesActions"
-import {adminLogin }  from "../store/actions/authenticationAction"
 import { Redirect, useHistory } from "react-router-dom";
 // import allData from "../data/userData"
-import userData from "../data/userData"
-import Modal from "./Modal"
+import { nanoid } from "nanoid";
+import people from "../assets/people.jpg";
+import userData from "../data/userData";
+import Modal from "./Modal";
+import { addEmployeeAction, getEmployeesAction, deleteEmployeeAction, editEmployeesAction } from "../store/actions/employeesActions"
+import {adminLogin }  from "../store/actions/authenticationAction"
 
 
 const EmployeeRegister = (props) => { 
