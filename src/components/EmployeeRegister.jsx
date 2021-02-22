@@ -14,8 +14,8 @@ const EmployeeRegister = (props) => {
   const [isOpen, setIsOpen] = useState(false)
   
    useEffect(() => {
-    // const allDataJson = JSON.stringify(allData)
-    // localStorage.setItem('myData', allDataJson)
+    //  const allDataJson = JSON.stringify(allData)
+    //  localStorage.setItem('myData', allDataJson)
      dispatch(getEmployeesAction()) 
    }, [])
   
@@ -35,17 +35,43 @@ const EmployeeRegister = (props) => {
         id: nanoid(),
         admin: false
     })
-    console.log(employeesData);
   
   const changeHandler = (e) => {
     const value = e.target.type === "checkbox" ? e.target.checked : e.target.value;
     setFormData({ ...formData, [e.target.name]: value });
   };
+
+  function randomUserName(formData){
+    const firstName = formData.firstName.split("")
+    const secondName = formData.secondName.split("")
+    
+    const randomUserName = `${firstName[Math.floor(Math.random() * Math.floor(firstName.length))]}${firstName[Math.floor(Math.random() * Math.floor(firstName.length))]}${firstName[Math.floor(Math.random() * Math.floor(firstName.length))]}${secondName[Math.floor(Math.random() * Math.floor(secondName.length))]}${secondName[Math.floor(Math.random() * Math.floor(secondName.length))]}${secondName[Math.floor(Math.random() * Math.floor(secondName.length))]}`
+
+    return randomUserName;
+  }
+
+  function randomPassword(formData){
+    const firstName = formData.firstName.split("")
+    const secondName = formData.secondName.split("")
+    
+    const randomPassword = `${firstName[Math.floor(Math.random() * Math.floor(firstName.length))].toUpperCase()}${Math.floor(Math.random() * Math.floor(firstName.length))}${firstName[Math.floor(Math.random() * Math.floor(firstName.length))]}${firstName[Math.floor(Math.random() * Math.floor(firstName.length))].toUpperCase()}${Math.floor(Math.random() * Math.floor(firstName.length))}${secondName[Math.floor(Math.random() * Math.floor(secondName.length))]}${Math.floor(Math.random() * Math.floor(secondName.length))}${secondName[Math.floor(Math.random() * Math.floor(secondName.length))].toUpperCase()}${secondName[Math.floor(Math.random() * Math.floor(secondName.length))]}`
+
+    return randomPassword;
+  }
+
+
+  
+
   
   const submitHandler = (e) => {
     e.preventDefault()
-    
-    
+
+    const generatedRandomUserName = randomUserName(formData)
+    formData.username = generatedRandomUserName
+
+    const generatedRandomPassword = randomPassword(formData)
+    formData.password = generatedRandomPassword
+
     dispatch(addEmployeeAction(formData)) 
     
     setFormData({
@@ -128,35 +154,37 @@ const EmployeeRegister = (props) => {
         
       </form>
       <table className="employees-container">
+        <tr>
+          <td><b>First Name</b></td>
+          <td><b>Second Name</b></td>
+          <td><b>Title</b></td>
+          <td><b>Username</b></td>
+          <td><b>Password</b></td>
+          <td><b>ID</b></td>
+          <td><b>Admin</b></td>
+          <td><b>Edit</b></td>
+          <td><b>Delete</b></td>
+        </tr>
         {employeesData.map((employee) =>
-          <tr key={employee.id} className="registered-employee">
-
+          <tbody key={employee.id}>
+          <tr className="registered-employee">
             <td>{employee.firstName}</td>
             <td>{employee.secondName}</td>
             <td>{employee.title}</td>
+            <td>{employee.username}</td>
+            <td>{employee.password}</td>
             <td>{employee.id}</td>
             <td>{employee.admin ? <i className="fas fa-check"></i> : ""}</td>
 
             <td><button className="table-btn" onClick={() => setIsOpen(true)}><i className="fas fa-pen"></i></button>
               <Modal open={isOpen} onClose={() => setIsOpen(false)} changeHandler={changeHandler} submitHandler={submitHandler} formData={formData} employee={employee}></Modal>
             </td>
-            
-            <td><button className="table-btn" onClick={handleEdit}><i className="fas fa-pen"></i></button></td>
 
             <td><button onClick={() => handleDelete(employee.id)} className="table-btn"><i className="fas fa-trash-alt"></i></button></td>
-            ) 
           </tr>
+          </tbody>
           )
         }
-
-        <section className={editToggle?"edit-employees-modal-visible":"edit-employees-modal-hidden"}>
-          <input type="text" placeholder="First Name" name="firstName"></input>
-          <input type="text" placeholder="Second Name" name="secondName"></input>
-          <input type="text" placeholder="Title" name="title"></input>
-          <input type="checkbox" name="admin" />
-          <label className="register-checkbox-label" htmlFor="admin"> Admin </label>
-          <button className="edit-employees-modal-btn">Submit</button>
-        </section>
       </table> 
 
       
