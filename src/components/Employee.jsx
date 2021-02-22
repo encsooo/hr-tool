@@ -1,6 +1,6 @@
 import React from "react";
 import Train from "../assets/train.jpg";
-import allData from "../data/userData"
+import allData from "../data/userData";
 
 export default function Employee (props){
     let userID = props.location.id;

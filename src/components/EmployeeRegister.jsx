@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';  
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 // import allData from "../data/userData"
 import { nanoid } from "nanoid"
 import people from "../assets/people.jpg"
@@ -9,8 +9,11 @@ import userData from "../data/userData"
 import Modal from "./Modal"
 
 const EmployeeRegister = (props) => { 
-     //const isAuthenticated = useSelector((state) => state);
-     //if (!isAuthenticated) return <Redirect to="/notFound404" />;
+  const history = useHistory()
+
+  //const isAuthenticated = useSelector((state) => state);
+  //if (!isAuthenticated) return <Redirect to="/notFound404" />;
+  
   const [isOpen, setIsOpen] = useState(false)
   
    useEffect(() => {
@@ -72,9 +75,8 @@ const EmployeeRegister = (props) => {
   return (
     <>
       <div className="header-container" style={{background: `linear-gradient(0deg, rgba(9,39,235,0.7) 0%, rgba(9,39,235,0.7) 100%), url(${people})`}} >
-        <button className="top-right-btn" onClick={() => props.history.push("/")}>
-          >>> Log out
-        </button>
+        <button className="top-right-btn" onClick={() => props.history.push("/")}>Log out</button>
+        <button className="goback-btn" onClick={() => history.goBack()}>Go Back</button>
         <div className="header-title"><h2>Employee Register</h2></div>
       </div>
       <div className="register-container">
