@@ -1,6 +1,10 @@
 import React from "react";
+<<<<<<< HEAD
+import { Link } from "react-router-dom";
+=======
 import { useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
+>>>>>>> 18fcd0e9166ba554aaa3144515b16a29803bb642
 import Train from "../assets/train.jpg";
 import allData from "../data/userData";
 
@@ -23,6 +27,12 @@ export default function Employee (props){
         </div>
         <div className="employee-main">
             <p>{userData.firstName} {userData.secondName} | {userData.title}</p>
+<<<<<<< HEAD
+            <p>{userData.email}</p>
+            <p>{userData.mobile} <i class="fas fa-pencil-alt"></i></p>
+            <p><b>Emergency Contact: </b>{userData.emergencyContact}</p>
+            <Link to= "/checkin"><button>Don't forget to check in</button></Link>
+=======
             <p>{userData.email} <button className="edit-employee-btn">Edit</button></p>
             <p>{userData.mobile} <button className="edit-employee-btn">Edit</button></p>
             <p>
@@ -30,6 +40,7 @@ export default function Employee (props){
             </p>
             
 
+>>>>>>> 18fcd0e9166ba554aaa3144515b16a29803bb642
         </div>
         </>
     )

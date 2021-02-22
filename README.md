@@ -1,4 +1,4 @@
-# HR Management Desktop App
+# HR Management Tool
 
 ## About
 
@@ -28,6 +28,7 @@ In the first two days we focused on creating the structure of the website i.e.:
 - a **login page**, where "admins" or regular employees can introduced their unique ID's(\*) and passwords to gain access to the site.
 - When an admin logs in, an **employee list** overview page will appear. Also linked to this page there is an
 - **employee register** where data of employees can be added, edited and deleted.
+- **add employee** creates a login and a user ID
 - In case of logging in as regular employee, only a specific information for this **user** will appear.
 
 (\*)For generating the IDs we used [Nano ID](https://github.com/ai/nanoid), a small yet powerful JS library that generates string IDs.
