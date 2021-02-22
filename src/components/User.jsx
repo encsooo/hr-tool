@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState } from 'react'
 
 const User = ({user}) => {
     const {id, firstName, secondName, title, username, admin, urlPhoto, email, mobile, start, emergencyContact} = user

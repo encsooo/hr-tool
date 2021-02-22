@@ -1,16 +1,31 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Redirect, useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { authenticated } from "../store/actions/authenticationAction";
 import { adminLogin,employeeLogin }  from "../store/actions/authenticationAction"
+import {getEmployeesAction} from "../store/actions/employeesActions"
 import Laptop from '../assets/laptop.jpg';
 import allData from "../data/userData";
 
-const Login = (props) => {
+const Login = () => {
+  useEffect(() => {
+    //RESET THE LOCAL STORAGE WITH ALL DATA 
+          // const allDataJson = JSON.stringify(allData)
+          //localStorage.setItem('myData', allDataJson)
+    dispatch(getEmployeesAction())
+  }, [])
+ 
+
+  // FOR THE GO BACK 
   const history = useHistory()
 
+  // REDUX
   const authenticatedState = useSelector((state) => state.authenticationReducer);
   const dispatch = useDispatch()
+
+  //GET EMPLOYEES DATA FROM LOCAL STORAGE
+  const employeesData = useSelector((state) => {
+    return state.employeesReducer.employees
+   })
 
   const [formData, setFormData] = useState({ username: "", password: "" });
   const [redirect, setRedirect] = useState("");
@@ -33,9 +48,10 @@ const Login = (props) => {
     setRedirect(checkLoginInfo());
   };
 
-  
+
   const checkLoginInfo = () => {
-    const permissionCheck = allData.reduce((acc,user)=>{
+    // FINDS OUT IF THE USER IS ADMIN EMPLOYEE OR DOESNT EXIST
+    const permissionCheck = employeesData.reduce((acc,user)=>{
       if(formData.username===user.username && formData.password===user.password && user.admin){
         acc = "admin"
       } else if(formData.username===user.username && formData.password===user.password && !user.admin){
@@ -45,6 +61,7 @@ const Login = (props) => {
       return acc
     },"")
    
+    // IF THE REDUCER RETURNS EMPTY IT MEANS THE USER DOESNT EXIST OR THE PASSWORD IS WRONG
     if(permissionCheck===""){
       return "wrong"
     }else{
