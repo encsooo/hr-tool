@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import Train from "../assets/train.jpg";
-import allData from "../data/userData"
+// import allData from "../data/userData"
 
 export default function Employee (props){
     let userID = props.location.id;
@@ -23,9 +23,23 @@ export default function Employee (props){
         </div>
         <div className="employee-main">
             <p>{userData.firstName} {userData.secondName} | {userData.title}</p>
-            <p>{userData.email}</p>
-            <p>{userData.mobile} <i class="fas fa-pencil-alt"></i></p>
-            <p><b>Emergency Contact: </b>{userData.emergencyContact}</p>
+            <p>{userData.email} <button className="edit-employee-btn">Edit</button></p>
+            <p>{userData.mobile} <button className="edit-employee-btn">Edit</button></p>
+            <p>
+                <b>Emergency Contact: </b> 
+                {submitChange? editInfo.emergencyContact : userData.emergencyContact}
+                <button className="edit-employee-btn" onClick={showEditInput}>Edit</button>
+
+            </p>
+            {toggleEdit && 
+                <form>
+                    <input type="text" name="emergencyContact" onChange={changeInfo}></input>
+                    <button className="edit-employee-btn" onClick={submitChangeInfo}>change</button>
+                    
+                </form>
+            }
+            
+
         </div>
         </>
     )

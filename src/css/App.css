@@ -264,18 +264,18 @@ td {
 
 /* MODAL */
 .modal-form {
-  width: 100%;
-  margin: 2rem 0rem;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.4rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+	width: 100%;
+	margin: 2rem 0rem;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.4rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .checkbox-container {
-  display: inline-block;
-  /* flex-direction: column; */
+	display: inline-block;
+	/* flex-direction: column; */
 }
 /* .modal-checkbox {
   margin: 0 0 0 4rem;
@@ -286,13 +286,13 @@ td {
 } */
 
 .modal-form input[type="text"] {
-  width: 100%;
-  padding: 0.5rem;
-  margin: 1rem 1rem;
-  border: none;
-  border-bottom: 1px solid blue;
+	width: 100%;
+	padding: 0.5rem;
+	margin: 1rem 1rem;
+	border: none;
+	border-bottom: 1px solid blue;
 }
 
 .modal-form input[type="text"]:focus {
-  outline: none;
+	outline: none;
 }
