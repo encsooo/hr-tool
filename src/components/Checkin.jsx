@@ -1,9 +1,12 @@
 import React, {useState, useRef, useEffect} from 'react'
 import allData from '../data/userData'
+import Login from './Login'
 
-const Checkin = () => {
+const Checkin = (props) => {
 const [checkinData, getGetcheckinData] = useState({username: ""})
 const [toggle, changeToggle] = useState(false)
+const [redirect, setRedirect] = useState("");
+console.log(checkinData)
 
 const inputRef = useRef();
 
@@ -11,52 +14,62 @@ const inputRef = useRef();
     inputRef.current.focus();
   }, []);
 
-  const toggleHandler = () => {
-    changeToggle(!toggle);
-  }
-
   const changeHandler = (e) => {
     getGetcheckinData({ ...checkinData, [e.target.name]: e.target.value });
   };
 
+  
   const submitHandler = (e) => {
     e.preventDefault();
-    checkLoginInfo();
+    setRedirect(checkLoginInfo()) ;
   };
  
   const checkLoginInfo = () => {
-    const isTheLoginCorrect = allData.reduce((acc, user)=>{
-      if(checkinData.username===user.username){
+    const isTheLoginCorrect = allData.reduce((acc, user) => {
+      if(checkinData.username === user.username){
         acc = "success"
-        console.log("right")
       }
       return acc
     },"")
+
    
    if (isTheLoginCorrect==="success"){
-      toggleHandler()
+    changeToggle(!toggle);
+    return "correct"
     } else {
-      console.log("sucker")
+      return "incorrect"
     }
   };
+
+
     return (
         <div className="checkin-container">
+
           <div className="checkin-header">
-          <div className={toggle ? `${"toggle-active"}` : `${"toggle-inactive"}`}>
-                <p>Hi</p>
-            </div>
+              <h1 className="checkin-hero">Please enter your login</h1>
           </div>
-          <input
-          className="ckeckin-input"
-          type="text"
-          name="username"
-          value={checkinData.username}
-          ref={inputRef}
-          id="checkin"
-          placeholder="Enter you login here"
-          onChange={changeHandler}
-        />
-         <button className="checkin-btn" onClick={submitHandler}>Login</button>
+
+          <div className={toggle ? `${"checkin-in"}` : `${"checkout-out"}`}>
+
+          </div>
+
+          <div className="login-container">
+            <input
+            className="checkin-input"
+            type="text"
+            name="username"
+            value={checkinData.username}
+            ref={inputRef}
+            id="checkin"
+            placeholder="Enter you login here"
+            onChange={changeHandler}
+            />
+
+          <button className="checkin-btn" onClick={submitHandler}>Log in</button>
+
+         </div>
+         {redirect === "correct" && <p className="correct">Logged in</p>}
+         {redirect === "incorrect" && <p className="warning">Wrong Name or Password</p>}
         </div>
     )
 }

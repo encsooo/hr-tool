@@ -381,4 +381,31 @@ td {
 
 .checkin-header {
   height: 30%;
+  width: 100%;
+  padding: 20px;
+  background-color: rgb(73, 89, 218);
+  margin-bottom: 5%;
+}
+
+.checkin-in,
+.checkout-out {
+  height: 20%;
+  margin-bottom: 5%;
+}
+
+.checkin-input,
+.checkin-btn {
+  height: 50px;
+  padding: 5px;
+}
+
+.checkin-btn {
+  border-radius: 0;
+  border: 1px solid rgb(0, 0, 164);
+  font-weight: 400;
+}
+
+.correct {
+  color: green;
+  font-size: 1.5rem;
 }

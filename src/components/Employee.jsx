@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Train from "../assets/train.jpg";
 import allData from "../data/userData"
 
@@ -19,6 +20,7 @@ export default function Employee (props){
             <p>{userData.email}</p>
             <p>{userData.mobile} <i class="fas fa-pencil-alt"></i></p>
             <p><b>Emergency Contact: </b>{userData.emergencyContact}</p>
+            <Link to= "/checkin"><button>Don't forget to check in</button></Link>
         </div>
         </>
     )
