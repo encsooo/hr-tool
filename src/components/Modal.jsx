@@ -54,19 +54,6 @@ export default function Modal({ open, onClose, handleOpenModal}) {
                 <button onClick={onClose}>X</button>
 
                 <form className="modal-form" onSubmit={submitHandler}>
-                    <label className="modal-label" htmlFor="firstName"></label>
-                    <input onChange={changeHandler}
-                        className="modal-input"
-                        type="text"
-                        id="firstName"
-                        name="firstName"
-                        value={formData.firstName}
-                        placeholder="First Name"
-                    />
-
-                <button className="onclose-btn table-btn" onClick={onClose}> <i class="fa fa-times"></i> </button>
-
-                <form className="modal-form" onSubmit={submitHandler}>
                     <div className="flex-item">
                         <label className="modal-label" htmlFor="firstName"></label>
                         <input onChange={changeHandler}

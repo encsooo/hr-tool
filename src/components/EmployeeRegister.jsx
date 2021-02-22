@@ -6,8 +6,6 @@ import { addEmployeeAction, getEmployeesAction, deleteEmployeeAction, editEmploy
 import {adminLogin }  from "../store/actions/authenticationAction"
 import { Redirect, useHistory } from "react-router-dom";
 // import allData from "../data/userData"
-import people from "../assets/people.jpg"
-import { addEmployeeAction, getEmployeesAction, deleteEmployeeAction } from "../store/actions/employeesActions"
 import userData from "../data/userData"
 import Modal from "./Modal"
 
@@ -17,7 +15,6 @@ const EmployeeRegister = (props) => {
   const isAuthenticated = useSelector((state) => state);
 
   const history = useHistory()
-  const [isOpen, setIsOpen] = useState(false)
 
   
   // ON LOAD FILL THE LIST WITH EMPLOYEE

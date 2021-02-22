@@ -26,18 +26,8 @@ export default function Employee (props){
             <p>{userData.email} <button className="edit-employee-btn">Edit</button></p>
             <p>{userData.mobile} <button className="edit-employee-btn">Edit</button></p>
             <p>
-                <b>Emergency Contact: </b> 
-                {submitChange? editInfo.emergencyContact : userData.emergencyContact}
-                <button className="edit-employee-btn" onClick={showEditInput}>Edit</button>
-
+                <b>Emergency Contact: {userData.emergencyContact} </b> 
             </p>
-            {toggleEdit && 
-                <form>
-                    <input type="text" name="emergencyContact" onChange={changeInfo}></input>
-                    <button className="edit-employee-btn" onClick={submitChangeInfo}>change</button>
-                    
-                </form>
-            }
             
 
         </div>
