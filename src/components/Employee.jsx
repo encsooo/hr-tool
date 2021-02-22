@@ -1,10 +1,7 @@
 import React from "react";
-<<<<<<< HEAD
 import { Link } from "react-router-dom";
-=======
 import { useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
->>>>>>> 18fcd0e9166ba554aaa3144515b16a29803bb642
 import Train from "../assets/train.jpg";
 import allData from "../data/userData";
 
