@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ReactDom from 'react-dom'
-import EmployeeRegister from './EmployeeRegister'
+import { useDispatch } from 'react-redux'
+import { editEmployeesAction } from "../store/actions/employeesActions"
 
+// STYLES FOR THE MODAL
 const MODAL_STYLES = {
     position: 'fixed',
     top: '50%',
@@ -22,10 +24,28 @@ const OVERLAY_STYLES = {
     zIndex: 1000
 }
 
-export default function Modal({ open, onClose, submitHandler, changeHandler, formData, employee }) {
-    if (!open) return null
-    const { id, firstName, secondName, title, admin } = employee
+export default function Modal({ open, onClose}) {
+    
+    const dispatch = useDispatch()
+    // GET THE VALUES FROM THE FORM
+    const [formData, setFormData] = useState({
+        firstName: "",
+        secondName: "",
+        title: "",
+        admin: false
+    })
+  
+    const changeHandler = (e) => {
+        const value = e.target.type === "checkbox" ? e.target.checked : e.target.value;
+        setFormData({ ...formData, [e.target.name]: value });
+    };
 
+    const submitHandler = (e) => {
+        e.preventDefault()
+        dispatch(editEmployeesAction())
+    }
+
+    if (!open) return null
     return ReactDom.createPortal (
         <>
             <div style={OVERLAY_STYLES} />

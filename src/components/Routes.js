@@ -6,7 +6,7 @@ import Login from "../components/Login";
 import Admin from "../components/Admin";
 import Checkin from '../components/Checkin';
 import EmployeeRegister from "../components/EmployeeRegister";
-import Employee from "../components/Employee"
+import Employee from "../components/Employee";
 import NotFound404 from "../components/NotFound404";
 
 

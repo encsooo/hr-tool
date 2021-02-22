@@ -1,19 +1,23 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Redirect, useHistory } from "react-router-dom";
-import {useSelector, useDispatch} from "react-redux"
-
-import { authenticated }  from "../store/actions/authenticationAction"
+import { useSelector, useDispatch } from "react-redux";
+import { authenticated } from "../store/actions/authenticationAction";
+import { adminLogin,employeeLogin }  from "../store/actions/authenticationAction"
 import Laptop from '../assets/laptop.jpg';
 import allData from "../data/userData";
 
 const Login = (props) => {
   const history = useHistory()
 
+<<<<<<< HEAD
   const authenticatedState = useSelector((state) => state.authenticationReducer);
+=======
+>>>>>>> 18fcd0e9166ba554aaa3144515b16a29803bb642
   const dispatch = useDispatch()
 
   const [formData, setFormData] = useState({ username: "", password: "" });
   const [redirect, setRedirect] = useState("");
+
   // SEND THE ID THROUGH PROPS SO WE KNOW WHICH USER IS IT
   const [userID, setUserID] = useState(0)  
 
@@ -52,9 +56,11 @@ const Login = (props) => {
   };
 
   if (redirect === "admin") {
-    dispatch(authenticated())
+    // SET AUTHENTICATED TO TRUE
+    dispatch(adminLogin())
     return <Redirect to={{ pathname: "/admin", username: formData.username }} />;
   } else if (redirect === "employee") {
+    dispatch(employeeLogin())
     return <Redirect to={{ pathname: "/employee", id: userID}} />;
   }
 
@@ -63,20 +69,15 @@ const Login = (props) => {
     <main>
       <div className="header-container" style={{background: `linear-gradient(0deg, rgba(9,39,235,0.7) 0%, rgba(9,39,235,0.7) 100%), url(${Laptop})`}}>
           <button
-              className="notfound-btn"
+              className="top-right-btn"
               onClick={() => history.push("/")}
             >
           To Main Page
             </button>
-        <button
-              className="notfound-btn"
-              onClick={() => history.goBack()}
-            >
-          Go Back
-            </button>
           <div className="header-title">
             <h2>Please log in</h2>
           </div>
+        
       </div>
         <form className="login-inner-container">
           <div className="username-input">
