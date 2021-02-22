@@ -63,16 +63,10 @@ const Login = (props) => {
     <main>
       <div className="header-container" style={{background: `linear-gradient(0deg, rgba(9,39,235,0.7) 0%, rgba(9,39,235,0.7) 100%), url(${Laptop})`}}>
           <button
-              className="notfound-btn"
+              className="top-right-btn"
               onClick={() => history.push("/")}
             >
           To Main Page
-            </button>
-        <button
-              className="notfound-btn"
-              onClick={() => history.goBack()}
-            >
-          Go Back
             </button>
           <div className="header-title">
             <h2>Please log in</h2>
