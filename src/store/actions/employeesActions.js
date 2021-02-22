@@ -12,9 +12,16 @@ export const deleteEmployeeAction = (employeeid) => {
     }
 }
 
+export const editEmployeesAction = (employeeid) => {
+    return {
+        type: 'EDIT_EMPLOYEES',
+        payload: employeeid
+    }
+}
+
 export const getEmployeesAction = () => {
-    //console.log("action");
     return {
         type: 'GET_EMPLOYEES'
     }
 }
+

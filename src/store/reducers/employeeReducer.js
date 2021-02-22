@@ -16,6 +16,10 @@ export const employeeReducer = (state = initialState, action) => {
             localStorage.setItem('myData', JSON.stringify(filteredStorageData))
             return { ...state, employees: filteredStorageData }
         
+        case "EDIT_EMPLOYEES":
+            console.log(action.payload);
+            return { ...state, employees: [...state.employees, ...JSON.parse(localStorage.getItem('myData'))] }
+        
         case "GET_EMPLOYEES" :
             return { ...state, employees: [...state.employees, ...JSON.parse(localStorage.getItem('myData'))] }
         

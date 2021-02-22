@@ -343,27 +343,13 @@ td {
   align-self: center;
 }
 
-.checkbox-container {
-  display: inline-block;
-  text-align: center;
-  padding: 1rem;
-  padding-bottom: 4rem;
-}
-
 .modal-checkbox-label {
   margin: 0.5rem;
 }
 
-.modal-form input[type="text"] {
-  width: 100%;
-  padding: 1rem;
-  margin: 1rem 1rem;
-  border: none;
-  border-bottom: 1px solid blue;
-}
 
 .modal-form input[type="text"]:focus {
-  outline: none;
+	outline: none;
 }
 
 .modal-form input[placeholder] {
