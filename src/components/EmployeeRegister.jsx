@@ -145,7 +145,7 @@ const EmployeeRegister = (props) => {
             <td><button className="table-btn" onClick={handleEdit}><i className="fas fa-pen"></i></button></td>
 
             <td><button onClick={() => handleDelete(employee.id)} className="table-btn"><i className="fas fa-trash-alt"></i></button></td>
-            ) 
+          
           </tr>
           )
         }
