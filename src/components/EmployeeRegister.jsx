@@ -2,11 +2,11 @@ import React, {useState, useEffect} from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect, useHistory } from "react-router-dom";
 // import allData from "../data/userData"
-import { nanoid } from "nanoid"
-import people from "../assets/people.jpg"
-import { addEmployeeAction, getEmployeesAction, deleteEmployeeAction } from "../store/actions/employeesActions"
-import userData from "../data/userData"
-import Modal from "./Modal"
+import { nanoid } from "nanoid";
+import people from "../assets/people.jpg";
+import { addEmployeeAction, getEmployeesAction, deleteEmployeeAction } from "../store/actions/employeesActions";
+import userData from "../data/userData";
+import Modal from "./Modal";
 
 const EmployeeRegister = (props) => { 
   const history = useHistory()
@@ -47,8 +47,7 @@ const EmployeeRegister = (props) => {
   
   const submitHandler = (e) => {
     e.preventDefault()
-    
-    
+
     dispatch(addEmployeeAction(formData)) 
     
     setFormData({
@@ -160,9 +159,6 @@ const EmployeeRegister = (props) => {
           <button className="edit-employees-modal-btn">Submit</button>
         </section>
       </table> 
-
-      
-
       </div>
     </>
     )
