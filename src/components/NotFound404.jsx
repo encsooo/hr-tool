@@ -13,11 +13,11 @@ export default function NotFound404(props) {
         <h2 className="header-title">Nothing to see here....</h2>
       </div>
       <div className="notfound-main">
-        <button
-          className="top-right-btn"
-          onClick={() => props.history.push("/")}
-        >
+        <button onClick={() => props.history.push("/")}>
           Go Home
+        </button>
+        <button onClick={() => props.history.goBack()} >
+          Go Back
         </button>
       </div>
     </>
