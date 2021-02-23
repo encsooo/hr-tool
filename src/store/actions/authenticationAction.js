@@ -1,11 +1,13 @@
-export const adminLogin = () =>{
+export const adminLogin = (username) =>{
     return{
-        type: "ADMIN_LOGIN"
+        type: "ADMIN_LOGIN",
+        payload: username
     }
 }
 
-export const employeeLogin = ()=>{
+export const employeeLogin = (username)=>{
     return{
-        type: "EMPLOYEE_LOGIN"
+        type: "EMPLOYEE_LOGIN",
+        payload: username
     }
 }

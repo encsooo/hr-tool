@@ -71,10 +71,10 @@ const Login = () => {
 
   if (redirect === "admin") {
     // SET AUTHENTICATED TO TRUE
-    dispatch(adminLogin())
+    dispatch(adminLogin(formData.username))
     return <Redirect to={{ pathname: "/admin", username: formData.username }} />;
   } else if (redirect === "employee") {
-    dispatch(employeeLogin())
+    dispatch(employeeLogin(formData.username))
     return <Redirect to={{ pathname: "/employee", id: userID}} />;
   }
 

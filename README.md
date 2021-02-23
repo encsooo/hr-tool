@@ -99,4 +99,3 @@ To learn React, check out the [React documentation](https://reactjs.org/).
     <td align="center"><a href="https://github.com/laurapacis"><img src="https://avatars.githubusercontent.com/u/67947931?s=400&u=93f0817b71f889b85215b686d62589856f781106&v=4" width="100px;" alt="laurapacis"/><br /><sub><b>laurapacis</b></sub></a><br /><a href="https://github.com/encsooo/hr-tool/commits?author=laurapacis" title="Code">💻</a></td>
   </tr>
 </table>
-`````
