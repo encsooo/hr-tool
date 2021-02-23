@@ -9,8 +9,8 @@ import allData from "../data/userData";
 const Login = () => {
   useEffect(() => {
     //RESET THE LOCAL STORAGE WITH ALL DATA 
-         // const allDataJson = JSON.stringify(allData)
-         // localStorage.setItem('myData', allDataJson)
+          // const allDataJson = JSON.stringify(allData)
+          //localStorage.setItem('myData', allDataJson)
     dispatch(getEmployeesAction())
   }, [])
  

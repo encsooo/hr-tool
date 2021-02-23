@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
@@ -8,10 +8,28 @@ import { getEmployeesAction } from "../store/actions/employeesActions";
 import { employeeLogin } from "../store/actions/authenticationAction";
 
 export default function Employee (props){
+    const [toggle, setToggle] = useState(true)
+    const [start, setStart] = useState(false)
     let userID = props.location.id;
    
     const isAuthenticated = useSelector((state) => state);
 
+    const handleToggle = () => {
+        setToggle(!toggle)
+        setStart(true)
+    }
+
+    const handleAnimation = () => {
+        if (toggle && start) {
+            return "animation-out"
+        } else if (!toggle && start) {
+            return "animation-in"
+        } else {
+            return "animation-neutral"
+        }
+    }
+
+    console.log(isAuthenticated);
     // GET LOCAL STORAGE
     const dispatch = useDispatch()
     useEffect(() => {
@@ -37,11 +55,35 @@ export default function Employee (props){
             <h2 className="header-title">{userData.username}</h2>
         </div>
         <div className="employee-main">
+            <div>
             <p>{userData.firstName} {userData.secondName} | {userData.title}</p>
             <p>{userData.email}</p>
             <p>{userData.mobile} <i className="fas fa-pencil-alt"></i></p>
             <p><b>Emergency Contact: </b>{userData.emergencyContact}</p>
-            <Link to= "/checkin"><button>Don't forget to check in</button></Link>
+            <p>{userData.email} <i className="fas fa-pencil-alt"></i></p>
+            <p>{userData.mobile} <i className="fas fa-pencil-alt"></i></p>
+            <p>
+                <b>Emergency Contact: {userData.emergencyContact} </b> 
+            </p>
+            </div>
+            <div className="check-container">
+                <div className={handleAnimation()}>
+                    <h2>
+                    {handleAnimation() === "animation-neutral" &&
+                     <p><i class="fas fa-calendar-check"> Don't forget to check in, {userData.firstName}</i></p>
+                    }
+                        {handleAnimation() === "animation-in" &&
+                     <p><i className="fas fa-mug-hot"> Good morning, {userData.firstName}</i></p>
+                    }
+
+                    {handleAnimation() === "animation-out" &&
+                     <p><i className="fas fa-moon">Goodbye, {userData.firstName}</i></p>
+                    }
+                    </h2>
+                </div>
+                <button className="checkin-btn" onClick={handleToggle}>Check {toggle ? "in" : "out"}</button>
+            </div>
+
         </div>
         </>
     )

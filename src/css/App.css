@@ -2,418 +2,443 @@
 
 /* BASE */
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
-	font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 #root {
-	width: 100vw;
-	height: 100vh;
-	font-family: "Roboto", sans-serif;
+  width: 100vw;
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
 }
 
 main {
-	height: 100%;
-	width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
 /* BUTTONS */
 button,
 .register-btn {
-	padding: 1rem 2rem;
-	border-radius: 26px;
-	background-color: rgb(255, 255, 255);
-	color: #0000ff;
-	border: 2px solid rgb(0, 0, 164);
-	font-weight: 900;
-	text-align: center;
-	text-transform: uppercase;
-	cursor: pointer;
-	outline: none;
+  padding: 1rem 2rem;
+  border-radius: 26px;
+  background-color: rgb(255, 255, 255);
+  color: #0000ff;
+  border: 2px solid rgb(0, 0, 164);
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
 }
 
 .top-right-btn,
 .goback-btn {
-	padding: 1rem 2rem;
-	border: 1px solid white;
-	position: absolute;
-	right: 50px;
-	top: 40px;
-	outline: none;
+  padding: 1rem 2rem;
+  border: 1px solid white;
+  position: absolute;
+  right: 50px;
+  top: 40px;
+  outline: none;
 }
 
 .goback-btn {
-	padding: 1rem 1.9rem;
-	top: 90px;
-	outline: none;
+  padding: 1rem 1.9rem;
+  top: 90px;
+  outline: none;
 }
 
 .register-btn:hover,
 .top-right-btn:hover,
 .goback-btn:hover {
-	transform: scale(1.06);
+  transform: scale(1.06);
 }
 
 .register-btn:active,
 .top-right-btn:active,
 .goback-btn:active {
-	transform: translateY(2px);
+  transform: translateY(2px);
 }
 
 .table-btn {
-	background-color: blue;
-	color: white;
-	border: none;
-	border-radius: 7px;
-	box-shadow: 3px 3px #999;
-	display: inline-block;
-	padding: 8px 10px;
-	cursor: pointer;
-	text-align: center;
-	outline: none;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  box-shadow: 3px 3px #999;
+  display: inline-block;
+  padding: 8px 10px;
+  cursor: pointer;
+  text-align: center;
+  outline: none;
 }
 
 .table-btn:hover {
-	background-color: orange;
+  background-color: orange;
 }
 
 .table-btn:active {
-	background-color: blue;
-	box-shadow: 2px 1px gray;
-	transform: translateY(2px);
+  background-color: blue;
+  box-shadow: 2px 1px gray;
+  transform: translateY(2px);
 }
 
 /* HEADER */
 .header-container {
-	width: 100%;
-	position: relative;
-	height: 35%;
+  width: 100%;
+  position: relative;
+  height: 35%;
 }
 
 .header-title {
-	font-size: 2.5rem;
-	position: absolute;
-	text-align: center;
-	top: 35%;
-	left: 6%;
-	padding: 1rem 3rem;
-	background-color: white;
-	font-family: "Space Mono", monospace;
-	color: blue;
+  font-size: 2.5rem;
+  position: absolute;
+  text-align: center;
+  top: 35%;
+  left: 6%;
+  padding: 1rem 3rem;
+  background-color: white;
+  font-family: "Space Mono", monospace;
+  color: blue;
 }
 
 /* HOME */
 h1 {
-	font-family: "Space Mono", monospace;
-	font-size: 6rem;
-	color: rgb(255, 255, 255);
+  font-family: "Space Mono", monospace;
+  font-size: 6rem;
+  color: rgb(255, 255, 255);
 }
 
 .hero-container {
-	height: 80%;
-	width: 100%;
-	background-size: cover;
-	background-position: center;
-	color: rgb(255, 255, 255);
-	align-items: flex-end;
-	background-repeat: no-repeat;
+  height: 80%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  color: rgb(255, 255, 255);
+  align-items: flex-end;
+  background-repeat: no-repeat;
 }
 
 .hero-container,
 .hero-bottom {
-	display: flex;
-	padding: 20px;
+  display: flex;
+  padding: 20px;
 }
 
 /* LOGIN */
 .login-inner-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	width: 300px;
-	height: 65%;
-	margin: 0 auto;
-	align-items: center;
-	border-left: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  height: 65%;
+  margin: 0 auto;
+  align-items: center;
+  border-left: 1px solid black;
 }
 
 .header-title h2 {
-	font-size: 4rem;
+  font-size: 4rem;
 }
 
 .login-inner-container * {
-	padding: 1rem;
-	margin: 1rem;
+  padding: 1rem;
+  margin: 1rem;
 }
 
 .login-inner-container label {
-	font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .warning {
-	color: red;
-	font-size: 1.5rem;
+  color: red;
+  font-size: 1.5rem;
 }
 
 .login-btn {
-	margin-right: 60px;
+  margin-right: 60px;
 }
 
 /* NOT FOUND */
 .notfound-main {
-	margin: 10% auto;
-	display: flex;
-	width: 70%;
+  margin: 10% auto;
+  display: flex;
+  width: 70%;
 }
 
 .notfound-main button {
-	font-size: 2rem;
-	margin: 2rem;
+  font-size: 2rem;
+  margin: 2rem;
 }
 
 .notfound {
-	height: 100%;
+  height: 100%;
 }
 
 .notfound-container {
-	height: 70%;
+  height: 70%;
 }
 
 .notfound-title {
-	font-size: 4rem;
+  font-size: 4rem;
 }
 
 /* ALL USERS */
 .user-container {
-	margin: 10% auto;
-	width: 95%;
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
-	gap: 3rem;
+  margin: 10% auto;
+  width: 95%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+  gap: 3rem;
 }
 
 .individual-user {
-	border-left: 2px solid blue;
-	padding-left: 2rem;
-	height: 280px;
+  border-left: 2px solid blue;
+  padding-left: 2rem;
+  height: 280px;
 }
 
 .individual-user h3 {
-	margin: 0.5rem 0;
-	color: blue;
+  margin: 0.5rem 0;
+  color: blue;
 }
 
 .individual-user h4,
 p {
-	font-size: 1.2rem;
-	font-family: Helvetica, sans-serif;
-	font-weight: lighter;
+  font-size: 1.2rem;
+  font-family: Helvetica, sans-serif;
+  font-weight: lighter;
 }
 
 img {
-	width: 50%;
+  width: 50%;
 }
 
 /* TOGGLE MENU */
 .toggle-inactive {
-	opacity: 0;
-	visibility: hidden;
-	height: 0;
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
 }
 
 .toggle-active {
-	opacity: 1;
-	visibility: visible;
+  opacity: 1;
+  visibility: visible;
 }
 
 .dropdown-info-btn,
 .dropdown-info-btn:focus {
-	background: none;
-	border: none;
-	font-size: 1rem;
-	outline: none;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  outline: none;
 }
 
 /* EMPLOYEE */
 .employee-main {
-	margin: 5% auto;
-	width: 80%;
-	border-left: 2px solid blue;
-	padding: 2rem;
+  margin: 5% auto;
+  width: 80%;
+  border-left: 2px solid blue;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .employee-main p {
-	margin-bottom: 1rem;
-	font-size: 2rem;
+  margin-bottom: 1rem;
+  font-size: 2rem;
 }
 
 /* EMPLOYEE REGISTER */
 .register-container {
-	margin: 10% auto;
-	width: 80%;
+  margin: 10% auto;
+  width: 80%;
 }
 
 .register-form {
-	width: 100%;
-	margin: 2rem 0rem;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 1.4rem;
+  width: 100%;
+  margin: 2rem 0rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.4rem;
 }
 
 .register-checkbox-label {
-	margin: 0 1.5rem 0 0.3rem;
+  margin: 0 1.5rem 0 0.3rem;
 }
 
 .register-form input[type="text"] {
-	width: 20%;
-	padding: 0.5rem;
-	margin: 1rem 2rem;
-	border: none;
-	border-bottom: 1px solid blue;
+  width: 20%;
+  padding: 0.5rem;
+  margin: 1rem 2rem;
+  border: none;
+  border-bottom: 1px solid blue;
 }
 
 .register-form input[type="text"]:focus {
-	outline: none;
+  outline: none;
 }
 
 table {
-	width: 100%;
-	border-collapse: collapse;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: larger;
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: larger;
 }
 
 tr {
-	border-bottom: 0.5px solid rgb(0, 0, 158);
+  border-bottom: 0.5px solid rgb(0, 0, 158);
 }
 
 tr:hover {
-	background-color: rgba(38, 0, 255, 0.105);
+  background-color: rgba(38, 0, 255, 0.105);
 }
 
 td {
-	padding: 1.5rem;
+  padding: 1.5rem;
 }
 
 .employee-edit-btn {
-	padding: 5px 10px;
+  padding: 5px 10px;
 }
 
 /* EDIT MODAL */
 .edit-employees-modal-visible {
-	width: 30%;
-	box-shadow: 0px 0px 5px gray;
+  width: 30%;
+  box-shadow: 0px 0px 5px gray;
 }
 
 .edit-employees-modal-hidden {
-	display: none;
-	width: 30%;
-	box-shadow: 0px 0px 5px gray;
+  display: none;
+  width: 30%;
+  box-shadow: 0px 0px 5px gray;
 }
 
 .employee-register-btn {
-	background-color: rgb(20, 41, 179);
-	color: rgb(255, 255, 255);
-	border: none;
+  background-color: rgb(20, 41, 179);
+  color: rgb(255, 255, 255);
+  border: none;
 }
 
 /* MODAL */
 .modal-form {
-	width: 100%;
-	margin: 4rem 1rem -1rem 0rem;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 1.4rem;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+  width: 100%;
+  margin: 4rem 1rem -1rem 0rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .flex-item {
-	width: 110%;
-	display: flex;
-	justify-content: center;
-	align-self: center;
+  width: 110%;
+  display: flex;
+  justify-content: center;
+  align-self: center;
 }
 
 .checkbox-container {
-	display: inline-block;
-	text-align: center;
-	padding: 1rem;
-	padding-bottom: 4rem;
+  display: inline-block;
+  text-align: center;
+  padding: 1rem;
+  padding-bottom: 4rem;
 }
 
 .modal-checkbox-label {
-	margin: 0.5rem;
+  margin: 0.5rem;
 }
 
 .modal-form input[type="text"] {
-	width: 100%;
-	padding: 1rem;
-	margin: 1rem 1rem;
-	border: none;
-	border-bottom: 1px solid blue;
+  width: 100%;
+  padding: 1rem;
+  margin: 1rem 1rem;
+  border: none;
+  border-bottom: 1px solid blue;
 }
 
 .modal-form input[type="text"]:focus {
-	outline: none;
+  outline: none;
 }
 
 .modal-form input[placeholder] {
-	font-style: italic;
+  font-style: italic;
 }
 
 .modal-form input[type="submit"] {
-	width: 50%;
+  width: 50%;
 }
 
 .onclose-btn {
-	position: absolute;
-	right: 4rem;
-	top: 2rem;
+  position: absolute;
+  right: 4rem;
+  top: 2rem;
 }
 /* CHECKIN PAGE */
 
 .checkin-container {
-	width: 100%;
-	height: 100%;
-	background-color: rgb(255, 255, 255);
-	display: flex;
-	align-items: center;
-	flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .checkin-header {
-	height: 30%;
-	width: 100%;
-	padding: 20px;
-	background-color: rgb(73, 89, 218);
-	margin-bottom: 5%;
+  height: 30%;
+  width: 100%;
+  padding: 20px;
+  background-color: rgb(73, 89, 218);
+  margin-bottom: 5%;
 }
 
 .checkin-in,
 .checkout-out {
-	height: 20%;
-	margin-bottom: 5%;
+  height: 20%;
+  margin-bottom: 5%;
 }
 
 .checkin-input,
 .checkin-btn {
-	height: 50px;
-	padding: 5px;
+  height: 50px;
+  padding: 5px;
 }
 
 .checkin-btn {
-	border-radius: 0;
-	border: 1px solid rgb(0, 0, 164);
-	font-weight: 400;
+  border-radius: 0;
+  border: 1px solid rgb(0, 0, 164);
+  font-weight: 400;
 }
 
 .correct {
-	color: green;
-	font-size: 1.5rem;
+  color: green;
+  font-size: 1.5rem;
+}
+
+.check-container {
+  display: flex;
+}
+
+.checkin-h2,
+.checkin-btn {
+  margin: 5px;
+}
+
+.animation-in,
+.animation-out,
+.animation-neutral {
+  height: 50px;
+  width: 200px;
+  font-size: 30px;
+}
+
+.animation-in {
+}
+
+.animation-out {
 }
