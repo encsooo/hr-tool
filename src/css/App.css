@@ -198,6 +198,7 @@ h1 {
 }
 
 .individual-user {
+	margin-bottom: 8rem;
 	border-left: 2px solid blue;
 	padding-left: 2rem;
 	height: 280px;
@@ -213,6 +214,7 @@ p {
 	font-size: 1.2rem;
 	font-family: Helvetica, sans-serif;
 	font-weight: lighter;
+	margin-bottom: 0.5rem;
 }
 
 img {
@@ -245,6 +247,8 @@ img {
 	width: 80%;
 	border-left: 2px solid blue;
 	padding: 2rem;
+	display: flex;
+	justify-content: space-between;
 }
 
 .employee-main p {
@@ -416,4 +420,27 @@ td {
 .correct {
 	color: green;
 	font-size: 1.5rem;
+}
+
+.check-container {
+	display: flex;
+}
+
+.checkin-h2,
+.checkin-btn {
+	margin: 5px;
+}
+
+.animation-in,
+.animation-out,
+.animation-neutral {
+	height: 50px;
+	width: 200px;
+	font-size: 30px;
+}
+
+.animation-in {
+}
+
+.animation-out {
 }

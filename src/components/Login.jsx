@@ -9,8 +9,8 @@ import allData from "../data/userData";
 const Login = () => {
   useEffect(() => {
     //RESET THE LOCAL STORAGE WITH ALL DATA 
-         // const allDataJson = JSON.stringify(allData)
-         // localStorage.setItem('myData', allDataJson)
+          // const allDataJson = JSON.stringify(allData)
+          //localStorage.setItem('myData', allDataJson)
     dispatch(getEmployeesAction())
   }, [])
  
@@ -71,10 +71,10 @@ const Login = () => {
 
   if (redirect === "admin") {
     // SET AUTHENTICATED TO TRUE
-    dispatch(adminLogin())
+    dispatch(adminLogin(formData.username))
     return <Redirect to={{ pathname: "/admin", username: formData.username }} />;
   } else if (redirect === "employee") {
-    dispatch(employeeLogin())
+    dispatch(employeeLogin(formData.username))
     return <Redirect to={{ pathname: "/employee", id: userID}} />;
   }
 

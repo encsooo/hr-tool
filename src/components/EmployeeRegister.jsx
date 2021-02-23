@@ -12,6 +12,8 @@ import {adminLogin }  from "../store/actions/authenticationAction"
 const EmployeeRegister = (props) => { 
   const isAuthenticated = useSelector((state) => state);
 
+  console.log(isAuthenticated);
+
   const history = useHistory()
   
   // ON LOAD FILL THE LIST WITH EMPLOYEE AND GET LOCAL STORAGE
