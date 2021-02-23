@@ -60,11 +60,6 @@ export default function Employee (props){
             <p>{userData.email}</p>
             <p>{userData.mobile} <i className="fas fa-pencil-alt"></i></p>
             <p><b>Emergency Contact: </b>{userData.emergencyContact}</p>
-            <p>{userData.email} <i className="fas fa-pencil-alt"></i></p>
-            <p>{userData.mobile} <i className="fas fa-pencil-alt"></i></p>
-            <p>
-                <b>Emergency Contact: {userData.emergencyContact} </b> 
-            </p>
             </div>
             <div className="check-container">
                 <div className={handleAnimation()}>
