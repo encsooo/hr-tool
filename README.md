@@ -29,7 +29,18 @@ In the first two days we focused on creating the structure of the website i.e.:
 - When an admin logs in, an **employee list** overview page will appear. Also linked to this page there is an
 - **employee register** where data of employees can be added, edited and deleted.
 - **add employee** creates a login and a user ID
-- In case of logging in as regular employee, only a specific information for this **user** will appear.
+- In case of logging in as regular employee, only a specific information for this **user** will appear. This page has also a **checkin/checkout** feature which is in progress.
+- **404NotFound** page will also pop up when needed.
+
+![home](src/assets/desktop-view/home.png)
+
+![login](src/assets/desktop-view/login.png)
+
+![admin-view](src/assets/desktop-view/admin-view.png)
+
+![employee-register](src/assets/desktop-view/employee-register.png)
+
+![employee](src/assets/desktop-view/employee.png)
 
 (\*)For generating the IDs we used [Nano ID](https://github.com/ai/nanoid), a small yet powerful JS library that generates string IDs.
 
